@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assests/style/services_css/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400&family=Playfair+Display:wght@700&family=Roboto+Slab:wght@200;300&family=Roboto:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <title>Services</title>
+    <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!--================= Navbar Section Start ==================-->
+        <%- include('./common/header.ejs')%>
+
+        <!--================= Banner Section Start ==================-->
+
+        <div class="banner container-fluid text-center d-flex align-items-center justify-content-center">
+            <h1 class=" border-2 border-bottom border-white">SERVICES</h1>
+        </div>
+
+        <!--================= Services Icons Section Start ==================-->
+
+        <div class="ServicesIcons container-fluid overflow-hidden pb-5">
+            <div class="row justify-content-center ">
+                <div class="col-12 col-sm-6">
+                    <div class="row pt-5 pb-sm-5 align-items-center justify-content-center">
+                        <div class=" card col-10 col-sm-3 ServicesIcons-card align-items-center p-3 rounded-3">
+                            <img src="./images/services/air-conditioner-svgrepo-com.svg" alt="">
+                            <p class="pt-3">Harmonic</p>
+                        </div>
+                        <div class=" card col-10 col-sm-3 ServicesIcons-card align-items-center p-3 rounded-3">
+                            <img src="./images/services/television-screen-svgrepo-com.svg" alt="">
+                            <p class="pt-3">Big Screen Tv</p>
+                        </div>
+                        <div class=" card col-10 col-sm-3 ServicesIcons-card align-items-center p-3 rounded-3">
+                            <img src="./images/services/wifi-svgrepo-com.svg" alt="">
+                            <p class="pt-3">Wifi Free</p>
+                        </div>
+                        <div class=" card col-10 col-sm-3 ServicesIcons-card align-items-center p-3 rounded-3">
+                            <img src="./images/services/key-square-2-svgrepo-com.svg" alt="">
+                            <p class="pt-3">Door Key</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center justify-content-center">
+                        <div class=" card col-10 col-sm-3 ServicesIcons-card align-items-center p-3 rounded-3">
+                            <img src="./images/services/coffee-machine-svgrepo-com.svg" alt="">
+                            <p class="pt-3">Cofee Maker</p>
+                        </div>
+                        <div class=" card col-10 col-sm-3 ServicesIcons-card align-items-center p-3 rounded-3">
+                            <img src="./images/services/tissue-svgrepo-com.svg" alt="">
+                            <p class="pt-3">Tissue Box</p>
+                        </div>
+                        <div class=" card col-10 col-sm-3 ServicesIcons-card align-items-center p-3 rounded-3">
+                            <img src="./images/services/hair-dryer-dryer-svgrepo-com.svg" alt="">
+                            <p class="pt-3">Hairdryer</p>
+                        </div>
+                        <div class=" card col-10 col-sm-3 ServicesIcons-card align-items-center p-3 rounded-3">
+                            <img src="./images/services/square-parking-svgrepo-com.svg" alt="">
+                            <p class="pt-3">Free Parking</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--================= RestaurantList Section Start ==================-->
+        <div class="restaurantsList container pt-5">
+            <div class="row justify-content-between p-sm-0 p-4">
+                <div class="left col-12 col-sm-6 overflow-hidden rounded-4 p-0">
+                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="./images/services/services-04.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./images/services/services-05.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./images/services/services-06.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="right col-12 col-sm-5 p-3 pt-5">
+                    <div class="upper row align-items-center pb-4">
+                        <img src="./images/services/crossed-knife-and-fork-svgrepo-com.svg" alt="">
+                        <h3 class="col-10 m-0">TOP RESTAURANTS</h3>
+                    </div>
+                    <div class="lower pt-5">
+                        <p>Our restaurant on the top floor offers dishes that celebrate the flavors of all the country's
+                            regions, from north to south in a cozy sitting with warm light.</p>
+                        <button class="btn btn-lg btn-outline-primary mt-5">View Detail <i
+                                class="bi bi-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-between flex-lg-row-reverse  p-sm-0 p-4">
+                <div class="left col-12 col-sm-6 overflow-hidden rounded-4 p-0">
+                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="./images/services/services-04.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./images/services/services-05.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./images/services/services-06.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="right col-12 col-sm-5 p-3 pt-5">
+                    <div class="upper row align-items-center pb-4">
+                        <img src="./images/services/crossed-knife-and-fork-svgrepo-com.svg" alt="">
+                        <h3 class="col-10 m-0">TOP RESTAURANTS</h3>
+                    </div>
+                    <div class="lower pt-5">
+                        <p>Our restaurant on the top floor offers dishes that celebrate the flavors of all the country's
+                            regions, from north to south in a cozy sitting with warm light.</p>
+                        <button class="btn btn-lg btn-outline-primary mt-5">View Detail <i
+                                class="bi bi-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-between  p-sm-0 p-4">
+                <div class="left col-12 col-sm-6 overflow-hidden rounded-4 p-0">
+                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="./images/services/services-04.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./images/services/services-05.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./images/services/services-06.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="right col-12 col-sm-5 p-3 pt-5">
+                    <div class="upper row align-items-center pb-4">
+                        <img src="./images/services/crossed-knife-and-fork-svgrepo-com.svg" alt="">
+                        <h3 class="col-10 m-0">TOP RESTAURANTS</h3>
+                    </div>
+                    <div class="lower pt-5">
+                        <p>Our restaurant on the top floor offers dishes that celebrate the flavors of all the country's
+                            regions, from north to south in a cozy sitting with warm light.</p>
+                        <button class="btn btn-lg btn-outline-primary mt-5">View Detail <i
+                                class="bi bi-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-between flex-lg-row-reverse  p-sm-0 p-4">
+                <div class="left col-12 col-sm-6 overflow-hidden rounded-4 p-0">
+                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="./images/services/services-04.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./images/services/services-05.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./images/services/services-06.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="right col-12 col-sm-5 p-3 pt-5">
+                    <div class="upper row align-items-center pb-4">
+                        <img src="./images/services/crossed-knife-and-fork-svgrepo-com.svg" alt="">
+                        <h3 class="col-10 m-0">TOP RESTAURANTS</h3>
+                    </div>
+                    <div class="lower pt-5">
+                        <p>Our restaurant on the top floor offers dishes that celebrate the flavors of all the country's
+                            regions, from north to south in a cozy sitting with warm light.</p>
+                        <button class="btn btn-lg btn-outline-primary mt-5">View Detail <i
+                                class="bi bi-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--================= Contact Section Start ==================-->
+        <div class="contact container-fluid overflow-hidden p-5">
+            <div class="row justify-content-center p-sm-5 p-lg-5">
+                <div class="col-lg-7 col-sm-7 col-12 text-center">
+                    <h2 class="mb-0">Leave your Message</h2>
+                    <p class="fs-6 pb-5">Contact us today using this form and we will reach you asap</p>
+                    <form action="">
+                        <div class="row pb-sm-2 pt-sm-2">
+                            <div class="col-sm-6 col-lg-6 p-0 pe-sm-3 pb-sm-0 pt-sm-0 pb-2 pt-2">
+                                <input type="text" class="form-control btn-outline-light" placeholder="First Name">
+                            </div>
+                            <div class="col-sm-6 col-lg-6 p-0 ps-sm-3  pb-sm-0 pt-sm-0 pb-2 pt-2">
+                                <input type="text" class="form-control" placeholder="Last Name">
+                            </div>
+                        </div>
+                        <div class="row pb-sm-2 pt-sm-2">
+                            <div class="col-sm-6 col-lg-6 p-0  pe-sm-3  pb-sm-0 pt-sm-0 pb-2 pt-2">
+                                <input type="text" class="form-control" placeholder="Enter your email">
+                            </div>
+                            <div class="col-sm-6 col-lg-6 p-0 ps-sm-3  pb-sm-0 pt-sm-0 pb-2 pt-2">
+                                <input type="text" class="form-control" placeholder="Enter your phone number">
+                            </div>
+                        </div>
+                        <div class="row pb-2 pt-2">
+                            <textarea name="" id="" cols="30" rows="3" class=" form-control col-12"
+                                placeholder="Write your message...."></textarea>
+                        </div>
+                        <div class="row pb-2 pt-2">
+                            <button type="submit" class="btn btn-primary col-12">SEND MESSAGE</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--================= Footer Section Start ==================-->
+        <%- include('./common/footer.ejs')%>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="./assests/js/services_js/script.js"></script>
+</body>
+
+</html>

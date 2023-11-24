@@ -1,0 +1,189 @@
+body {
+  font-family: "Barlow", sans-serif;
+  background-color: #ffffff;
+}
+
+.custom-btn {
+  background-color: #e8e8e8;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.nav-link {
+  font-family: Poppins;
+  font-weight: 400;
+}
+
+.read-btn {
+  font-family: Poppins;
+  padding: 15px 30px;
+  background-color: transparent;
+  color: #808080;
+}
+
+.read-btn:hover {
+  background-color: #1e83a8;
+  color: #fff;
+}
+
+.offcanvas {
+  flex-direction: row;
+}
+
+.nav-link {
+  font-family: Poppins;
+  font-weight: 400;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+  color: #1e83a8;
+}
+
+.nav-link:hover {
+  color: #1e83a8;
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown > .dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+  pointer-events: none;
+}
+
+.custom-btn {
+  background-color: #2596be;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 18px;
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.custom-btn:hover {
+  background-color: #063c43;
+  color: #fff;
+}
+
+.btn-class {
+  background-color: rgba(37, 149, 190, 0.1019607843);
+  color: #2596be;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 18px;
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.btn-class:hover {
+  color: #2596be;
+}
+
+.login .active {
+  background-color: #2596be;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 18px;
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.login .active:hover {
+  color: #fff;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.banner {
+  background-image: url("../../../images/services/header-banner-service.jpg");
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+}
+.banner h1 {
+  color: white;
+}
+
+.ServicesIcons {
+  padding-top: 80px;
+  background-color: #F9F9F9;
+}
+
+.ServicesIcons-card {
+  border: 0px;
+  box-sizing: border-box;
+  transition: all 0.4s ease-in-out;
+  background-color: #F9F9F9;
+  top: 0px;
+  z-index: 0;
+}
+.ServicesIcons-card:hover {
+  top: -10px;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0px 60px 80px rgba(0, 0, 0, 0.06);
+  z-index: 2;
+}
+.ServicesIcons-card img {
+  width: 40px;
+  height: 30px;
+}
+
+.restaurantsList .left {
+  height: fit-content;
+}
+.restaurantsList .upper {
+  border-bottom: 2px solid rgb(234, 234, 234);
+}
+.restaurantsList .upper img {
+  width: 70px;
+  height: 70px;
+}
+.restaurantsList .lower p {
+  color: rgb(151, 151, 151);
+}
+
+.contact {
+  background-color: #F9F9F9;
+}
+.contact p {
+  color: rgb(147, 142, 142);
+}
+.contact input {
+  height: 50px;
+}
+.contact .form-control:focus {
+  box-shadow: none;
+  border-color: rgb(228, 228, 228);
+}
+.contact .form-control::placeholder {
+  color: rgb(176, 176, 176);
+}
+.contact textarea {
+  resize: none;
+}
+
+footer {
+  padding: 80px 0;
+  background-color: #063c43;
+}
+
+footer button {
+  background-color: #1e83a8;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/*# sourceMappingURL=style.css.map */
