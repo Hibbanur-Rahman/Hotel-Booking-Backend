@@ -68,6 +68,14 @@ app.post("/login", async (req, res) => {
       app.get('/myProfile',(req,res)=>{
         res.render('./userDashboard/myProfile',{user});
       })
+      //user my Reviews
+      app.get('/myReviews',(req,res)=>{
+        res.render('./userDashboard/myReviews',{user});
+      })
+      //user my Reviews
+      app.get('/userSetting',(req,res)=>{
+        res.render('./userDashboard/setting',{user});
+      })
 
 
     } else {
