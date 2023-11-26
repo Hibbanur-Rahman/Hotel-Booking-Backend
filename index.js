@@ -41,6 +41,8 @@ app.get("/login", (re, res) => {
   res.render("login");
 });
 
+
+
 app.post("/login", async (req, res) => {
   // Handle login logic
   const data = {
@@ -60,11 +62,11 @@ app.post("/login", async (req, res) => {
       app.get("/userDashboard", (req, res) => {
         res.render("./userDashboard/dashboard", { user });
       });
-      //user my booking routes
+      // user my booking routes
       app.get('/myBooking',(req,res)=>{
         res.render('./userDashboard/myBooking', { user });
       })
-      //user my profile route
+      // user my profile route
       app.get('/myProfile',(req,res)=>{
         res.render('./userDashboard/myProfile',{user});
       })
