@@ -72,11 +72,14 @@ app.post("/login", async (req, res) => {
       app.get('/myReviews',(req,res)=>{
         res.render('./userDashboard/myReviews',{user});
       })
-      //user my Reviews
+      //user my userSetting
       app.get('/userSetting',(req,res)=>{
         res.render('./userDashboard/setting',{user});
       })
-
+      //user my wishlist
+      app.get('/wishlist',(req,res)=>{
+        res.render('./userDashboard/wishlist',{user});
+      })
 
     } else {
       // User not found, handle login failure
@@ -99,7 +102,7 @@ app.post("/signup", async (req, res) => {
 
   try {
     await collection.insertMany([data]);
-    res.render("login");
+    // res.render("login");
   } catch (error) {
     console.error("Error inserting data:", error);
     res.status(500).send("Internal Server Error");
