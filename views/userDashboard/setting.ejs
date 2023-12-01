@@ -28,6 +28,9 @@
     <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
+
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
 </head>
 <body>
     <div class="main container-fluid d-flex m-0 p-0 ">
@@ -84,8 +87,192 @@
                     </div>
                 </div>
 
-                <div class="row m-0 p-0">
-
+                <div class="row m-0 p-0 ps-3">
+                    <div class="col-6">
+                        <div class="card personalInformation border-0">
+                            <div class="row m-0 p-3 border border-top-0 border-start-0 border-end-0">
+                                <h3  class="m-0 p-0 fs-5">Personal Information</h3>
+                            </div>
+                            <div class="row m-0 p-3 ">
+                                <div class="col-3 rounded-1 overflow-hidden p-0">
+                                    <img src="./images/userDashboard/userImg.jpg" alt="" class="rounded-2 img-fluid">
+                                </div>
+                                <div class="col-9 d-flex flex-column ps-4">
+                                    <p>Max file size is 5MB ,Minimum Dimension :150x150 And Suitable files are .jpg & .png</p>
+                                    <div class="inputField uploadFile row p-0 m-0">
+                                        <!-- <i class="las la-upload position-absolute fs-3 z-1 m-0 mt-2 w-auto"></i> -->
+                                        <!-- <input id="profilePhotoUpload" accept=".png,.jpg,.jpeg" type="text" class="p-2 position-relative ps-5 rounded-1 border border-1 w-auto" placeholder="Upload Image"> -->
+                                        <input type="file" id="profilePhotoUpload" accept=".png,.jpg,.jpeg" class="m-0 w-auto p-0">
+                                    </div>
+                                    <div class="row m-0 p-0">
+                                        <button class="btn btn-primary w-auto mt-2 p-2">Remove Image</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-3">
+                                <form action="/personalInformation" method="post" class="m-0 p-0">
+                                    <div class="row m-0 p-0 pt-4">
+                                        <div class="col-6 p-0 m-0 pe-3">
+                                            <p class="m-0 p-0 pb-2">First Name</p>
+                                            <div class="inputField m-0 p-0 row">
+                                                <i class="las la-user position-absolute fs-3 z-1 m-0 mt-2 w-auto"></i>
+                                                <input type="text" class="p-2 position-relative ps-5 rounded-1 border border-1" placeholder="Hibban">
+                                            </div>
+                                        </div>
+                                        <div class="col-6 p-0 m-0 ps-1">
+                                            <p class="m-0 p-0 pb-2">Last Name</p>
+                                            <div class="inputField row p-0 m-0">
+                                                <i class="las la-user position-absolute fs-3 z-1 m-0 mt-2 w-auto"></i>
+                                                <input type="text" class="p-2 position-relative ps-5 rounded-1 border border-1" placeholder="Rahman">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row m-0 p-0 pt-4">
+                                        <div class="col-6 p-0 m-0 pe-3">
+                                            <p class="m-0 p-0 pb-2">Email Address</p>
+                                            <div class="inputField row m-0 p-0">
+                                                <i class="las la-envelope position-absolute fs-3 z-1 m-0 mt-2 w-auto"></i>
+                                                <input type="text" class="p-2 position-relative ps-5 rounded-1 border border-1" placeholder="hibban@gmail.com">
+                                            </div>
+                                        </div>
+                                        <div class="col-6 p-0 m-0  ps-1">
+                                            <p class="m-0 p-0 pb-2">Phone number</p>
+                                            <div class="inputField row m-0 p-0">
+                                                <i class="las la-phone position-absolute fs-3 z-1 m-0 mt-2 w-auto"></i>
+                                                <input id="phone" type="text" class="p-2 position-relative ps-5 rounded-1 border border-1" placeholder="+91 99731 52523">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row m-0 p-0 pt-4">
+                                        <div class="col-6 p-0 m-0 pe-3">
+                                            <p class="m-0 p-0 pb-2">Date of birth</p>
+                                            <div class="inputField row m-0 p-0">
+                                                <i class="las la-user position-absolute fs-3 z-1 m-0 mt-2 w-auto"></i>
+                                                <input type="text" class=" m-0 p-2 position-relative ps-5 rounded-1 border border-1" placeholder="11 Nov 2004">
+                                            </div>
+                                        </div>
+                                        <div class="col-6 p-0 m-0  ps-1">
+                                            <p class="m-0 p-0 pb-2">Address</p>
+                                            <div class="inputField row m-0 p-0">
+                                                <i class="las la-map position-absolute fs-3 z-1 m-0 mt-2 w-auto"></i>
+                                                <input id="phone" type="text" class=" p-2  ps-5 rounded-1 border border-1" placeholder="Gacchibowli,Hyderabad">
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <button type="submit" class="btn btn-primary mt-3">Save Changes</button>
+                                </form>
+                            </div>
+                        </div>
+    
+                
+                    </div>
+                    <div class="col-6 m-0 pe-4">
+                        <div class="card changeEmail m-0 p-0 border-0">
+                            <div class="row m-0 p-3 border border-top-0 border-start-0 border-end-0">
+                                <h3  class="m-0 p-0 fs-5">Change Email</h3>
+                            </div>
+                            <div class="row m-0 p-3">
+                                <form action="" class="m-0 p-0">
+                                    <div class="row p-0 m-0 pt-2 ">
+                                        <p class="p-0 m-0 pb-2">Current Email</p>
+                                        <div class="inputField row m-0 p-0">
+                                            <i class="las la-envelope position-absolute fs-3 z-1 m-0 mt-2 w-auto"></i>
+                                            <input  type="email" class=" p-2  ps-5 rounded-1 border border-1"
+                                                placeholder="Current email">
+                                        </div>
+                                    </div>
+                                    <div class="row p-0 m-0 pt-4">
+                                        <p class="p-0 m-0 pb-2">New Email</p>
+                                        <div class="inputField row m-0 p-0">
+                                            <i class="las la-envelope position-absolute fs-3 z-1 m-0 mt-2 w-auto"></i>
+                                            <input type="email" class=" p-2  ps-5 rounded-1 border border-1"
+                                                placeholder="New email">
+                                        </div>
+                                    </div>
+                                    <div class="row p-0 m-0 pt-4">
+                                        <p class="p-0 m-0 pb-2">New Email Again</p>
+                                        <div class="inputField row m-0 p-0">
+                                            <i class="las la-envelope position-absolute fs-3 z-1 m-0 mt-2 w-auto"></i>
+                                            <input type="email" class=" p-2  ps-5 rounded-1 border border-1"
+                                                placeholder="New email again">
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mt-3">Change Email</button>
+    
+                                </form>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+                <div class="row m-0 p-0 ps-3 pt-5 pb-5">
+                    <div class="col-6">
+                        <div class="card m-0 p-0 border-0 changePassword">
+                            <div class="row m-0 p-3 border border-top-0 border-start-0 border-end-0">
+                                <h3 class="m-0 p-0 fs-5">Change Password</h3>
+                            </div>
+                            <div class="row m-0 p-3">
+                                <form action="" class="m-0 p-0">
+                                    <div class="row m-0 p-0 pt-4">
+                                        <div class="col-6 p-0 m-0 pe-3">
+                                            <p class="m-0 p-0 pb-2">Current Password</p>
+                                            <div class="inputField m-0 p-0 row">
+                                                <i class="las la-lock position-absolute fs-3 z-1 m-0 mt-2 w-auto"></i>
+                                                <input type="text"
+                                                    class="p-2 position-relative ps-5 rounded-1 border border-1"
+                                                    placeholder="Current password">
+                                            </div>
+                                        </div>
+                                        <div class="col-6 p-0 m-0 ps-1">
+                                            <p class="m-0 p-0 pb-2">New Password</p>
+                                            <div class="inputField row p-0 m-0">
+                                                <i class="las la-user position-absolute fs-3 z-1 m-0 mt-2 w-auto"></i>
+                                                <input type="text"
+                                                    class="p-2 position-relative ps-5 rounded-1 border border-1"
+                                                    placeholder="New password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row m-0 p-0 pt-4">
+                                        <div class="col-6 p-0 m-0 pe-3">
+                                            <p class="m-0 p-0 pb-2">New Password Again</p>
+                                            <div class="inputField m-0 p-0 row">
+                                                <i class="las la-lock position-absolute fs-3 z-1 m-0 mt-2 w-auto"></i>
+                                                <input type="text"
+                                                    class="p-2 position-relative ps-5 rounded-1 border border-1"
+                                                    placeholder="New password again">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mt-3">Change Email</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6  m-0 pe-4">
+                        <div class="card forgotPassword m-0 border-0 p-3">
+                            <div class="row m-0 p-0">
+                                <h3 class="m-0 p-0 fs-5 pb-3">Forgot Password</h3>
+                                <p class="m-0 p-0 text-secondary">Enter the Email of your account to reset password. Then you will recieve a link to email</p>
+                                <p class="m-0 p-0 text-secondary">to reset the password  if you have any issue about reset password contact us</p>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <form action="" class="m-0 p-0">
+                                    <div class="row p-0 m-0 pt-4">
+                                        <p class="p-0 m-0 pb-2">Email Address</p>
+                                        <div class="inputField row m-0 p-0">
+                                            <i class="las la-envelope position-absolute fs-3 z-1 m-0 mt-2 w-auto"></i>
+                                            <input id="phone" type="text" class=" p-2  ps-5 rounded-1 border border-1"
+                                                placeholder="Enter email address">
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mt-3">Change Email</button>
+    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
     </div>
