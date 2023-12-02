@@ -28,13 +28,90 @@
     <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
+    <link  rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+
 </head>
 <body>
     <div class="main container-fluid d-flex m-0 p-0 ">
         <%- include('../common/dashboardSidebar.ejs',{user:user,item:'myReviews'})%>
             <div class="contents container-fluid m-0 p-0" style="margin-left: 300px !important">
 
-                <h2>My Reviews</h2>
+                <div class="heading row m-0 p-0 bg-primary pt-4 pb-5">
+                    <div class="upperNav row m-0 p-0 ps-3">
+                        <div class="left row col-6 d-flex flex-row justify-content-start align-items-center">
+                            <img src="./images/userDashboard/logo.png" alt="" />
+                            <div class="search d-flex justify-content-end align-items-center col-8">
+                                <input type="text" class="form-control p-2" placeholder="search" />
+                                <i class="bi bi-search position-absolute me-3"></i>
+                            </div>
+                        </div>
+                        <div class="right col-6 d-flex justify-content-end align-items-center">
+                            <div class="notification rounded-5 p-2 d-flex align-items-center justify-content-center me-3">
+                                <i class="bi bi-bell p-0 m-0"></i>
+                                <div
+                                    class="notificationCount bg-light p-1 d-flex align-items-center justify-content-center position-absolute">
+                                    <p class="p-0 m-0">5</p>
+                                </div>
+                            </div>
+                            <div class="profileImg rounded-5 overflow-hidden col-4 p-0 d-flex">
+                                <img src="./images/userDashboard/userImg.jpg" alt="" />
+                            </div>
+                            <p class="p-0 m-0 ps-3 text-light"><%= user.name%></p>
+                        </div>
+                    </div>
+                    <div class="lowerNav row m-0 p-0 d-flex align-items-center p-4">
+                        <div class="col-6 d-flex align-items-center">
+                            <h2 class="text-light p-0 m-0">My Booking</h2>
+                        </div>
+                        <div class="breadcrumb_items col-6 d-flex align-items-center justify-content-end">
+                            <nav class="w-auto" style="
+                      --bs-breadcrumb-divider: url(
+                        &#34;data:image/svg + xml,
+                        %3Csvgxmlns='http://www.w3.org/2000/svg'width='8'height='8'%3E%3Cpathd='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z'fill='%236c757d'/%3E%3C/svg%3E&#34;
+                      );
+                    " aria-label="breadcrumb">
+                                <ol class="breadcrumb w-auto p-2 rounded-2 m-0">
+                                    <li class="breadcrumb-item">
+                                        <a href="#" class="text-light">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item text-light" aria-current="page">
+                                        <a href="#" class="text-light">Dashboard</a>
+                                    </li>
+                                    <li class="breadcrumb-item active text-light" aria-current="page">
+                                        MyBooking
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row m-0 p-0 ps-3 align-items-center justify-content-center mt-3 pb-5">
+                    <div class="col-12">
+                        <div class=" pagenation row m-0 p-0">
+                            <div class="col-2 w-auto rounded-circle p-2 m-0 ms-1 d-flex align-items-center justify-content-center">
+                                <i class="la la-angle-left p-0 m-0 text-primary fs-4 "></i>
+                            </div>
+                            
+                            <div class="w-auto rounded-circle  m-0 ms-1  p-2 ps-3 pe-3 d-flex align-items-center justify-content-center">
+                                <p class="m-0 p-0 text-primary">1</p>
+                            </div>
+                            <div class=" w-auto rounded-circle  m-0 ms-1  p-2 ps-3 pe-3 d-flex align-items-center justify-content-center">
+                                <p class="m-0 p-0 text-primary">2</p>
+                            </div>
+                            <div class=" w-auto rounded-circle  m-0 ms-1  p-2 ps-3 pe-3 d-flex align-items-center justify-content-center">
+                                <p class="m-0 p-0 text-primary">3</p>
+                            </div>
+                            <div class=" w-auto rounded-circle  m-0 ms-1  p-2  d-flex align-items-center justify-content-center">
+                                <i class="la la-angle-right p-0 m-0 text-primary fs-4"></i>
+                            </div>
+                        </div>
+                       
+                    </div>
+                    
+                </div>
             </div>
     </div>
 </body>

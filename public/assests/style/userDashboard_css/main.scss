@@ -295,3 +295,25 @@
     
     }
 }
+
+.pagenation{
+    div{
+        background-color:#0a465c1a;
+        transition: all 0.4s ease-in-out;
+        &:hover{
+            transition: all 0.4s ease-in-out;
+            background-color: #0964b0;
+            cursor: pointer;
+            p{
+                color: rgb(246, 243, 243) !important;
+            }
+            i{
+                color: white !important;
+            }
+        }
+        p{
+            line-height: 18px;
+            font-size: 18px;
+        }
+    }
+}
