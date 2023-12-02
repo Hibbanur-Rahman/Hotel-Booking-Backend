@@ -279,4 +279,13 @@
   font-size: 18px;
 }
 
+.mainReviewsList {
+  margin-top: -60px !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+.mainReviewsList .reviewsItem img {
+  height: 80px !important;
+  width: 80px !important;
+}
+
 /*# sourceMappingURL=style.css.map */

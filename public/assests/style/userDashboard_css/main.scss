@@ -317,3 +317,14 @@
         }
     }
 }
+
+.mainReviewsList{
+    margin-top: -60px !important;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    .reviewsItem{
+        img{
+            height: 80px !important;
+            width: 80px !important;
+        }
+    }
+}
