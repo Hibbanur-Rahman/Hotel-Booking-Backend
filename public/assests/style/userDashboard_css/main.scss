@@ -257,3 +257,41 @@
         outline: none;
     }
 }
+.mainWishlist {
+    margin-top: -60px !important;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    .WishListItem {
+        transition: all 0.4s ease-in-out;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        &:hover {
+            margin-top: -10px !important;
+            transition: all 0.4s ease-in-out;
+        }
+    
+        .upper {
+            .bestseller {
+                left: 20px;
+                top: -10px;
+    
+                p {
+                    font-size: 13px !important;
+                    line-height: 13px;
+                }
+            }
+    
+            .addWishlist {
+                right: 13px;
+                top: 20px;
+                transition: all 0.4s ease-in-out;
+                :hover {
+                    transition: all 0.4s ease-in-out;
+                    background: #0964b0 !important;
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+    
+        }
+    
+    }
+}
