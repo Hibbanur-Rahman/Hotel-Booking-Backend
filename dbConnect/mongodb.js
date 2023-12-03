@@ -35,6 +35,12 @@ const HotelBookingSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  mobile:{
+    type:Number,
+  },
+  dateOfBirth:{
+    type:Date,
+  }
 });
 
 const HotelBookingModel = mongoose.model("LoginUserHotelBooking", HotelBookingSchema);
