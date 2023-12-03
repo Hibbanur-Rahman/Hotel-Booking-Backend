@@ -1,6 +1,9 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser"); // Add body-parser
+const mainRoutes = require('./routes/mainRoutes');
+const bcrypt = require("bcrypt");
+const saltRounds = 10; // You can adjust the number of salt rounds
 
 const collection = require("./dbConnect/mongodb");
 
@@ -16,44 +19,19 @@ app.use(express.static(publicPath));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
-app.get("/", (req, res) => {
-  res.render("index");
-});
-app.get("/aboutUs", (req, res) => {
-  res.render("aboutUs");
-});
-app.get("/rooms", (req, res) => {
-  res.render("rooms");
-});
-app.get("/services", (req, res) => {
-  res.render("services");
-});
-app.get("/blog", (req, res) => {
-  res.render("blog");
-});
-app.get("/gallery", (req, res) => {
-  res.render("gallery");
-});
-app.get("/contact", (req, res) => {
-  res.render("contact");
-});
-app.get("/login", (re, res) => {
-  res.render("login");
-});
+//routes of main website pages
+app.use('/',mainRoutes);
 
+
+//login logic
 app.post("/login", async (req, res) => {
-  // Handle login logic
-  const data = {
-    email: req.body.email,
-    password: req.body.password,
-  };
-
   try {
-    const user = await collection.findOne({
-      email: data.email,
-      password: data.password,
-    });
-    if (user) {
+    const data = {
+      email: req.body.email,
+      password: req.body.password,
+    };
+    const user = await collection.findOne({ email: data.email });
+    if (user && (await bcrypt.compare(data.password, user.password))) {
       res.render("./userDashboard/dashboard", { user });
 
       //user dashboard routes
@@ -61,30 +39,28 @@ app.post("/login", async (req, res) => {
         res.render("./userDashboard/dashboard", { user });
       });
       //user my booking routes
-      app.get('/myBooking',(req,res)=>{
-        res.render('./userDashboard/myBooking', { user });
-      })
+      app.get("/myBooking", (req, res) => {
+        res.render("./userDashboard/myBooking", { user });
+      });
       //user my profile route
-      app.get('/myProfile',(req,res)=>{
-        res.render('./userDashboard/myProfile',{user});
-      })
+      app.get("/myProfile", (req, res) => {
+        res.render("./userDashboard/myProfile", { user });
+      });
       //user my Reviews
-      app.get('/myReviews',(req,res)=>{
-        res.render('./userDashboard/myReviews',{user});
-      })
+      app.get("/myReviews", (req, res) => {
+        res.render("./userDashboard/myReviews", { user });
+      });
       //user my userSetting
-      app.get('/userSetting',(req,res)=>{
-        res.render('./userDashboard/setting',{user});
-      })
+      app.get("/userSetting", (req, res) => {
+        res.render("./userDashboard/setting", { user });
+      });
       //user my wishlist
-      app.get('/wishlist',(req,res)=>{
-        res.render('./userDashboard/wishlist',{user});
-      })
-
+      app.get("/wishlist", (req, res) => {
+        res.render("./userDashboard/wishlist", { user });
+      });
     } else {
-      // User not found, handle login failure
-      console.log("Login failed: User not found");
-      res.render("login", { error: "Invalid email or password" }); // Render login page with an error message
+      console.log("Login failed: Invalid email or password");
+      res.render("login", { error: "Invalid email or password" });
     }
     console.log(user);
   } catch (error) {
@@ -93,16 +69,25 @@ app.post("/login", async (req, res) => {
   }
 });
 
+
+//signup logic
 app.post("/signup", async (req, res) => {
-  const data = {
-    name: req.body.name,
+  const name = req.body.name;
+  const myName = name.split(" ");
+
+  const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
+
+  const userData = {
+    firstName: myName[0],
+    lastName:myName[myName.length-1],
+    name: name,
     email: req.body.email,
-    password: req.body.password,
+    password: hashedPassword,
   };
 
   try {
-    await collection.insertMany([data]);
-    // res.render("login");
+    await collection.insertMany([userData]);
+    // res.status(201).send("User created successfully");
   } catch (error) {
     console.error("Error inserting data:", error);
     res.status(500).send("Internal Server Error");

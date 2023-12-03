@@ -16,9 +16,16 @@ db.once("open", () => {
 });
 
 const HotelBookingSchema = new mongoose.Schema({
+  
   name: {
     type: String,
     required: true,
+  },
+  firstName:{
+    type:String,
+  },
+  lastName:{
+    type:String,
   },
   password: {
     type: String,
