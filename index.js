@@ -1,27 +1,28 @@
 const express = require("express");
 const path = require("path");
-const bodyParser = require("body-parser"); // Add body-parser
-const mainRoutes = require('./routes/mainRoutes');
+const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
-const saltRounds = 10; // You can adjust the number of salt rounds
-
 const collection = require("./dbConnect/mongodb");
+const mainRoutes = require("./routes/mainRoutes");
+const userRoutes = require("./routes/userRoutes");
+const adminRoutes = require("./routes/adminRoutes");
+require("dotenv").config();
 
-const publicPath = path.join(__dirname, "public");
-const loginPage = path.join(__dirname, "views/login.ejs");
 const app = express();
 
-app.engine("ejs", require("ejs").renderFile);
-app.set("view engine", "ejs");
+const saltRounds = 10;
+
+const publicPath = path.join(__dirname, "public");
 app.use(express.static(publicPath));
 
 // Add body-parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// Set the view engine
 app.set("view engine", "ejs");
 
-//routes of main website pages
-app.use('/',mainRoutes);
-
+// Use mainRoutes for the main website pages
+app.use("/", mainRoutes);
 
 //login logic
 app.post("/login", async (req, res) => {
@@ -60,7 +61,6 @@ app.post("/login", async (req, res) => {
       });
 
 
-
       //adminDashboard Routes
       app.get("/adminDashboard", (req, res) => {
         res.render("./adminDashboard/dashboard", { user });
@@ -82,17 +82,19 @@ app.post("/login", async (req, res) => {
         res.render("./adminDashboard/myListing", { user });
       });
       //admin addListing
-       app.get("/addListing", (req, res) => {
+      app.get("/addListing", (req, res) => {
         res.render("./adminDashboard/addListing", { user });
       });
       //admin wallet
-       app.get("/wallet", (req, res) => {
+      app.get("/wallet", (req, res) => {
         res.render("./adminDashboard/wallet", { user });
       });
       //admin setting
       app.get("/adminSetting", (req, res) => {
         res.render("./adminDashboard/adminSetting", { user });
       });
+
+      
     } else {
       console.log("Login failed: Invalid email or password");
       res.render("login", { error: "Invalid email or password" });
@@ -104,7 +106,6 @@ app.post("/login", async (req, res) => {
   }
 });
 
-
 //signup logic
 app.post("/signup", async (req, res) => {
   const name = req.body.name;
@@ -114,7 +115,7 @@ app.post("/signup", async (req, res) => {
 
   const userData = {
     firstName: myName[0],
-    lastName:myName[myName.length-1],
+    lastName: myName[myName.length - 1],
     name: name,
     email: req.body.email,
     password: hashedPassword,
@@ -129,6 +130,7 @@ app.post("/signup", async (req, res) => {
   }
 });
 
-app.listen(8000, () => {
-  console.log("the file is running on 8000 port....");
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
+  console.log(`the file is running on ${port} port....`);
 });
