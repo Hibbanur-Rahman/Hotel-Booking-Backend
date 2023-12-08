@@ -14,9 +14,9 @@ router.use((req, res, next) => {
     }
   });
 // User dashboard routes
-router.get("/", (req, res) => {
-    res.render("./userDashboard/dashboard", { user: req.user });
-  });
+// router.get("/", (req, res) => {
+//     res.render("./userDashboard/dashboard", { user: req.user });
+//   });
   
   
 //user dashboard routes

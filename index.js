@@ -34,7 +34,6 @@ app.post("/login", async (req, res) => {
     const user = await collection.findOne({ email: data.email });
     if (user && (await bcrypt.compare(data.password, user.password))) {
       res.render("./userDashboard/dashboard", { user });
-
       //user dashboard routes
       app.get("/userDashboard", (req, res) => {
         res.render("./userDashboard/dashboard", { user });
