@@ -40,6 +40,8 @@
                 <%- include('../common/headingData.ejs',{user:user,page:"Settings"})%>
 
                 <div class="row m-0 p-0 ps-3">
+                    <!-- ====================  change personal data ================== -->
+
                     <div class="col-6">
                         <div class="card personalInformation border-0">
                             <div class="row m-0 p-3 border border-top-0 border-start-0 border-end-0">
@@ -47,7 +49,7 @@
                             </div>
                             <div class="row m-0 p-3 ">
                                 <div class="col-3 rounded-1 overflow-hidden p-0">
-                                    <img src="./images/userDashboard/userImg.jpg" alt="" class="rounded-2 img-fluid">
+                                    <img src="./images/userDashboard/userImg.jpg" alt="" class="imgPreviewProfile rounded-2 img-fluid">
                                 </div>
                                 <div class="col-9 d-flex flex-column ps-4">
                                     <p>Max file size is 5MB ,Minimum Dimension :150x150 And Suitable files are .jpg & .png</p>
@@ -117,6 +119,8 @@
     
                 
                     </div>
+                    <!-- ====================  change Email ================== -->
+
                     <div class="col-6 m-0 pe-4">
                         <div class="card changeEmail m-0 p-0 border-0">
                             <div class="row m-0 p-3 border border-top-0 border-start-0 border-end-0">
@@ -157,6 +161,7 @@
                     </div>
                 </div>
                 <div class="row m-0 p-0 ps-3 pt-5 pb-5">
+                    <!-- ====================  change password ================== -->
                     <div class="col-6">
                         <div class="card m-0 p-0 border-0 changePassword">
                             <div class="row m-0 p-3 border border-top-0 border-start-0 border-end-0">
@@ -195,11 +200,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary mt-3">Change Email</button>
+                                    <button type="submit" class="btn btn-primary mt-3">Change Password</button>
                                 </form>
                             </div>
                         </div>
                     </div>
+                   <!-- ====================  forgot password ================== -->
+
                     <div class="col-6  m-0 pe-4">
                         <div class="card forgotPassword m-0 border-0 p-3">
                             <div class="row m-0 p-0">
@@ -217,7 +224,7 @@
                                                 placeholder="Enter email address">
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary mt-3">Change Email</button>
+                                    <button type="submit" class="btn btn-primary mt-3">Forgot Password</button>
     
                                 </form>
                             </div>
@@ -230,6 +237,8 @@
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="./assests/js/userDashboard_js/profileToolpit.js"></script>
+    <script src="./assests/js/userDashboard_js/settingUploadPhoto.js"></script>
+
 </body>
 
 </html>
