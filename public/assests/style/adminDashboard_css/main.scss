@@ -300,3 +300,13 @@
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     margin-top: -60px !important;
 }
+
+.walletContent{
+    margin-top: -60px !important;
+    .card{
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        i{
+            font-size: 60px !important;
+        }
+    }
+}
