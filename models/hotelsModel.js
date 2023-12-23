@@ -1,28 +1,30 @@
 const mongoose = require("mongoose");
 
 const hotelSchema = new mongoose.Schema({
-  id: {
+  hotelId: {
     type: Number,
     required: true,
-    unique: true,
   },
   name: {
     type: String,
-    required:true,
+    required: true,
   },
   pin:{
     type: Number,
-    required:true,
+    required: true,
   },
   imageHotel:{
     type:String,
-    required:true,
+    required: true,
   },
   description:{
     type: String,
     required: true,
   },
-
+  createdAt:{
+    type: Date,
+    default: Date.now,
+  }
 });
 
 

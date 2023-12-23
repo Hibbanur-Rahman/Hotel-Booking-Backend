@@ -6,6 +6,8 @@ const collection = require("./dbConnect/mongodb");
 const mainRoutes = require("./routes/mainRoutes");
 const userRoutes = require("./routes/userRoutes");
 const adminRoutes = require("./routes/adminRoutes");
+
+const {addHotel}=require("./controller/addHotelController.js");
 require("dotenv").config();
 
 const app = express();
@@ -24,6 +26,9 @@ app.set("view engine", "ejs");
 // Use mainRoutes for the main website pages
 app.use("/", mainRoutes);
 
+
+// use the add hotel routes with controller
+app.use("/addHotel",addHotel);
 //login logic
 app.post("/login", async (req, res) => {
   try {
@@ -128,6 +133,7 @@ app.post("/signup", async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
+
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
