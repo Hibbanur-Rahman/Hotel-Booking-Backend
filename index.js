@@ -7,7 +7,7 @@ const mainRoutes = require("./routes/mainRoutes");
 const userRoutes = require("./routes/userRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 
-const {addHotel}=require("./controller/addHotelController.js");
+const addHotelController=require("./controller/addHotelController.js");
 require("dotenv").config();
 
 const app = express();
@@ -20,6 +20,10 @@ app.use(express.static(publicPath));
 // Add body-parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
+// Add body-parser middleware
+app.use(bodyParser.json());
+
 // Set the view engine
 app.set("view engine", "ejs");
 
@@ -27,8 +31,11 @@ app.set("view engine", "ejs");
 app.use("/", mainRoutes);
 
 
+
 // use the add hotel routes with controller
-app.use("/addHotel",addHotel);
+app.use("/addHotel",addHotelController.addHotel);
+
+
 //login logic
 app.post("/login", async (req, res) => {
   try {
