@@ -47,14 +47,14 @@
                   <i class="bi bi-file-earmark-fill text-primary w-auto m-0 p-0 pe-2"></i>
                   <h4 class="fw-bold fs-6 w-auto m-0 p-0">Listing Info</h4>
                 </div>
-                <form action="/addHotel" class="m-0 p-3">
+                <form action="/addHotel" method="post" class="m-0 p-3">
                   <p class="text-secondary m-0">Listing Title</p>
                   <input type="text" id="listingTitle" class="input-group rounded-2 border border-1 p-3 mt-2"
-                    placeholder="Decathlon Sport House" name="listingTitle">
+                    placeholder="Decathlon Sport House" name="name">
                   <div class="row m-0 p-0 pt-3">
                     <div class="col-6 m-0 p-0 pe-3">
                       <p class="m-0 p-0 pb-2 text-secondary">Categories</p>
-                      <select class="form-select m-0 border-1 p-3" aria-label="select" name="hotelCategories">
+                      <select class="form-select m-0 border-1 p-3" aria-label="select" name="categories">
                         <option selected>Hotel & Spa</option>
                         <option value="1">Hotel & Spa</option>
                         <option value="2">Education</option>
@@ -74,7 +74,7 @@
       
                   </div>
                   <p class="text-secondary m-0 mt-3 p-0 pb-2">About Listing</p>
-                  <textarea name="" id="" cols="30" rows="6" class="form-control p-3" placeholder="Describe your self" name="HotelDescription"></textarea>
+                  <textarea id="" cols="30" rows="6" class="form-control p-3" placeholder="Describe your self" name="description"></textarea>
 
                   <button type="submit" class="btn btn-primary mt-3">Submit & Preview</button>
 
