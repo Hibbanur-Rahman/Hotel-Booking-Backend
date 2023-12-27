@@ -8,6 +8,7 @@ const userRoutes = require("./routes/userRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 
 const addHotelController=require("./controller/addHotelController.js");
+const addLocalityController= require('./controller/addLocalityController.js');
 require("dotenv").config();
 
 const app = express();
@@ -34,7 +35,8 @@ app.use("/", mainRoutes);
 
 // use the add hotel routes with controller
 app.use("/addHotel",addHotelController.addHotel);
-
+//use the add locality routes with controller
+app.use('/addLocality',addLocalityController.AddLocality);
 
 //login logic
 app.post("/login", async (req, res) => {

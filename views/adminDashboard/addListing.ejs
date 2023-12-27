@@ -2,885 +2,916 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./assests/style/adminDashboard_css/style.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./assests/style/adminDashboard_css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
 
 
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400&family=Playfair+Display:wght@700&family=Roboto+Slab:wght@200;300&family=Roboto:wght@300;400&display=swap"
-        rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400&family=Playfair+Display:wght@700&family=Roboto+Slab:wght@200;300&family=Roboto:wght@300;400&display=swap"
+    rel="stylesheet">
 
-    <title>Add Listing in Admin Dashboard</title>
+  <title>Add Listing in Admin Dashboard</title>
 
-    <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+  <link rel="stylesheet"
+    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 </head>
 
 <body>
-    <div class="main container-fluid d-flex m-0 p-0 ">
-        
-        <%- include('../common/adminDashboardSidebar.ejs',{user:user,item:'addListing'})%>
+  <div class="main container-fluid d-flex m-0 p-0 ">
 
-      
-        <div class="contents container-fluid m-0 p-0" style="margin-left: 300px !important">
-            <%- include('../common/headingData.ejs',{user:user,page:"Add Listing"})%>
-            <div class="addListingMain row m-0 p-5">
+    <%- include('../common/adminDashboardSidebar.ejs',{user:user,item:'addListing'})%>
 
-              <!-- ========================= listingInfo ================================= -->
-              <div class="listingInfo card m-0 p-0 border-0">
-                <div class="row m-0 p-3 align-items-center border border-start-0 border-bottom-1 border-top-0 border-end-0">
-                  <i class="bi bi-file-earmark-fill text-primary w-auto m-0 p-0 pe-2"></i>
-                  <h4 class="fw-bold fs-6 w-auto m-0 p-0">Listing Info</h4>
-                </div>
-                <form action="/addHotel" method="post" class="m-0 p-3">
-                  <p class="text-secondary m-0">Listing Title</p>
-                  <input type="text" id="listingTitle" class="input-group rounded-2 border border-1 p-3 mt-2"
-                    placeholder="Decathlon Sport House" name="name">
-                  <div class="row m-0 p-0 pt-3">
-                    <div class="col-6 m-0 p-0 pe-3">
-                      <p class="m-0 p-0 pb-2 text-secondary">Categories</p>
-                      <select class="form-select m-0 border-1 p-3" aria-label="select" name="categories">
-                        <option selected>Hotel & Spa</option>
-                        <option value="1">Hotel & Spa</option>
-                        <option value="2">Education</option>
-                        <option value="3">Wedding</option>
-                        <option value="4">Restaurents</option>
-                        <option value="4">Cafe & Bars</option>
-                        <option value="4">Bankings</option>
-                        <option value="4">Services</option>
-      
-                      </select>
-                    </div>
-      
-                    <div class="col-6 m-0 p-0 ps-3">
-                      <p class="m-0 p-0 pb-2 text-secondary">Keywords</p>
-                      <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3" placeholder="Type Keywords by comma's" name="HotelKeyword">
-                    </div>
-      
-                  </div>
-                  <p class="text-secondary m-0 mt-3 p-0 pb-2">About Listing</p>
-                  <textarea id="" cols="30" rows="6" class="form-control p-3" placeholder="Describe your self" name="description"></textarea>
 
-                  <button type="submit" class="btn btn-primary mt-3">Submit & Preview</button>
+      <div class="contents container-fluid m-0 p-0" style="margin-left: 300px !important">
+        <%- include('../common/headingData.ejs',{user:user,page:"Add Listing"})%>
+          <div class="addListingMain row m-0 p-5">
 
-                </form>
+            <!-- ========================= listingInfo ================================= -->
+            <div class="listingInfo card m-0 p-0 border-0">
+              <div
+                class="row m-0 p-3 align-items-center border border-start-0 border-bottom-1 border-top-0 border-end-0">
+                <i class="bi bi-file-earmark-fill text-primary w-auto m-0 p-0 pe-2"></i>
+                <h4 class="fw-bold fs-6 w-auto m-0 p-0">Listing Info</h4>
               </div>
+              <form action="/addHotel" method="post" class="m-0 p-3">
+                <p class="text-secondary m-0">Listing Title</p>
+                <input type="text" id="listingTitle" class="input-group rounded-2 border border-1 p-3 mt-2"
+                  placeholder="Decathlon Sport House" name="name">
+                <div class="row m-0 p-0 pt-3">
+                  <div class="col-6 m-0 p-0 pe-3">
+                    <p class="m-0 p-0 pb-2 text-secondary">Categories</p>
+                    <select class="form-select m-0 border-1 p-3" aria-label="select" name="categories">
+                      <option selected>Hotel & Spa</option>
+                      <option value="1">Hotel & Spa</option>
+                      <option value="2">Education</option>
+                      <option value="3">Wedding</option>
+                      <option value="4">Restaurents</option>
+                      <option value="4">Cafe & Bars</option>
+                      <option value="4">Bankings</option>
+                      <option value="4">Services</option>
 
-              <!-- ========================= location Info ================================= -->
-              <div class="locationInfo card m-0 mt-5 p-0 border-0">
-                <div class="row m-0 p-3 align-items-center border border-start-0 border-bottom-1 border-top-0 border-end-0">
-                  <i class="bi bi-geo-alt-fill text-primary w-auto m-0 p-0 pe-2"></i>
-                  <h4 class="fw-bold fs-6 w-auto m-0 p-0">Location Info</h4>
-                </div>
-                <form action="" class="m-0 p-3">
-              
-                  <div class="row m-0 p-0 pt-3">
-                    <div class="col-6 m-0 p-0 pe-3">
-                      <p class="m-0 p-0 pb-2 text-secondary">Lattitude</p>
-                      <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3" placeholder="8054256">
-                    </div>
-      
-                    <div class="col-6 m-0 p-0 ps-3">
-                      <p class="m-0 p-0 pb-2 text-secondary">Longitude</p>
-                      <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3" placeholder="-7254625">
-                    </div>
-      
+                    </select>
                   </div>
-                  <div class="row m-0 p-0 pt-3">
-                    <iframe class="m-0 p-0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.68773947089!2d78.35877297462784!3d17.426766901670543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93f5ada6d80f%3A0x6d6400aee08b61a1!2sMaulana%20Azad%20National%20Urdu%20University!5e0!3m2!1sen!2sin!4v1701894706945!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                  </div>
-                  <div class="row m-0 p-0 pt-3">
-                    <div class="col-6 m-0 p-0 pe-3">
-                      <p class="m-0 p-0 pb-2 text-secondary">States</p>
-                      <select class="form-select m-0 border-1 p-3" aria-label="select">
-                        <option selected>Bihar</option>
-                        <option value="1">Telangana</option>
-                        <option value="2">Gujrat</option>
-                        <option value="3">UP</option>
-                        <option value="4">Goa</option>
-                        <option value="4">Delhi</option>
-                        <option value="4">Kerala</option>
-                        <option value="4">Tamil Nadu</option>
-      
-                      </select>
-                    </div>
-      
-                    <div class="col-6 m-0 p-0 ps-3">
-                      <p class="m-0 p-0 pb-2 text-secondary">City</p>
-                      <select class="form-select m-0 border-1 p-3" aria-label="select">
-                        <option selected>Darbhanga</option>
-                        <option value="1">Hyderabad</option>
-                        <option value="2">Patna</option>
-                        <option value="3">Aligarh</option>
-                        <option value="4">Allahabad</option>
-                        <option value="4">Muzzaffarpur</option>
-                        <option value="4">Agra</option>
-                        <option value="4">Lucknow</option>
-      
-                      </select>
-                    </div>
-      
-                  </div>
-                  <div class="row m-0 p-0 pt-3">
-                    <div class="col-6 m-0 p-0 pe-3">
-                      <p class="m-0 p-0 pb-2 text-secondary">Address</p>
-                      <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3" placeholder="ward 05, Near Jama masjid,Hayaghat">
-                    </div>
-      
-                    <div class="col-6 m-0 p-0 ps-3">
-                      <p class="m-0 p-0 pb-2 text-secondary">Zip Code</p>
-                      <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3" placeholder="847301">
-                    </div>
-      
-                  </div>
-                  <div class="row m-0 p-0 pt-3">
-                    <div class="col-6 m-0 p-0 pe-3">
-                      <p class="m-0 p-0 pb-2 text-secondary">Mobile</p>
-                      <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3" placeholder="+91 9973152523">
-                    </div>
-      
-                    <div class="col-6 m-0 p-0 ps-3">
-                      <p class="m-0 p-0 pb-2 text-secondary">Email</p>
-                      <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3" placeholder="hibbanrahmanhyt@gmail.com">
-                    </div>
-      
-                  </div>
-                  <p class="text-secondary m-0 mt-3 p-0 pb-2">Website</p>
-                  <input type="text" id="listingWebsite" class="input-group rounded-2 border border-1 p-3 mt-2"
-                    placeholder="https://hibbanur-rahman.me/hotel-booking.com">
-                </form>
-              </div>
 
-              <!-- ========================= Image Gallery ================================= -->
+                  <div class="col-6 m-0 p-0 ps-3">
+                    <p class="m-0 p-0 pb-2 text-secondary">Keywords</p>
+                    <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
+                      placeholder="Type Keywords by comma's" name="HotelKeyword">
+                  </div>
 
-              <div class="ImageGallery card m-0 mt-5 p-0 border-0">
-                <div class="row m-0 p-3 align-items-center border border-start-0 border-bottom-1 border-top-0 border-end-0">
-                  <i class="bi bi-camera-fill text-primary w-auto m-0 p-0 pe-2"></i>
-                  <h4 class="fw-bold fs-6 w-auto m-0 p-0">Image & Gallery Option</h4> 
                 </div>
-                <form action="" class="m-0 p-3">
-                  <div class="row m-0 p-0">
-                    <div class="col-4 uploadFile">
-                      <p class="m-0 p-0 pb-2 text-secondary">Upload Logo</p>
-                      <div class="imagePreviewCard card  p-0 m-0 d-flex justify-content-center align-items-center rounded-4 d-none">
-                        <img src="./images/adminDashboard/car-img.png" alt="" class="img-fluid rounded-4 h-100 w-auto">
-                      </div>
-                      <div class="imgInputFeildCard card d-flex justify-content-center align-items-center border-0 rounded-4">
-                        <div class="inputField uploadFile row p-0  m-0 h-100 w-100">
-                          <input type="file" id="profilePhotoUpload" accept=".png,.jpg,.jpeg" class="m-0 w-100 p-0 border border-0">
-                       </div>
-                       <img src="./images/adminDashboard/upload-icon.png" alt="" width="50" height="50" class="img-fluid m-0 p-0 position-absolute bottom-50">
-        
-                        <p class="m-0 p-0 text-secondary position-absolute pt-5">Drag files here to upload</p>
-                      </div>
-                      <p class="m-0 p-0 pb-2 pt-2 text-secondary">Maximum file size: 2 MB.</p>
-                    </div>
-                    <div class="col-4 uploadFile">
-                      <p class="m-0 p-0 pb-2 text-secondary">Featured Image</p>
-                      <div class="imagePreviewCard card  p-0 m-0 d-flex justify-content-center align-items-center rounded-4 d-none">
-                        <img src="./images/adminDashboard/car-img.png" alt="" class="img-fluid rounded-4 h-100 w-auto">
-                      </div>
-                      <div class="imgInputFeildCard card d-flex justify-content-center align-items-center border-0 rounded-4">
-                        <div class="inputField uploadFile row p-0  m-0 h-100 w-100">
-                          <input type="file" id="profilePhotoUpload" accept=".png,.jpg,.jpeg" class="m-0 w-100 p-0 border border-0">
-                       </div>
-                       <img src="./images/adminDashboard/upload-icon.png" alt="" width="50" height="50" class="img-fluid m-0 p-0 position-absolute bottom-50">
-        
-                        <p class="m-0 p-0 text-secondary position-absolute pt-5">Drag files here to upload</p>
-                      </div>
-                      <p class="m-0 p-0 pb-2 pt-2 text-secondary">Maximum file size: 2 MB.</p>
-      
-                    </div>
-                    <div class="col-4 uploadFile">
-                      <p class="m-0 p-0 pb-2 text-secondary">Image Gallery</p>
-                      <div class="imagePreviewCard card  p-0 m-0 d-flex justify-content-center align-items-center rounded-4 d-none">
-                        <img src="./images/adminDashboard/car-img.png" alt="" class="img-fluid rounded-4 h-100 w-auto">
-                      </div>
-                      <div class="imgInputFeildCard card d-flex justify-content-center align-items-center border-0 rounded-4">
-                        <div class="inputField uploadFile row p-0  m-0 h-100 w-100">
-                          <input type="file" id="profilePhotoUpload" accept=".png,.jpg,.jpeg" class="m-0 w-100 p-0 border border-0">
-                       </div>
-                       <img src="./images/adminDashboard/upload-icon.png" alt="" width="50" height="50" class="img-fluid m-0 p-0 position-absolute bottom-50">
-        
-                        <p class="m-0 p-0 text-secondary position-absolute pt-5">Drag files here to upload</p>
-                      </div>
-                      <p class="m-0 p-0 pb-2 pt-2 text-secondary">Maximum file size: 2 MB.</p>
-                    </div>
-                  </div>
-                  
-                </form>
-              </div>
+                <p class="text-secondary m-0 mt-3 p-0 pb-2">About Listing</p>
+                <textarea id="" cols="30" rows="6" class="form-control p-3" placeholder="Describe your self"
+                  name="description"></textarea>
 
-              <!-- ========================= Menue Items ================================= -->
-              <div class="menuItems card m-0 mt-5 p-0 border-0">
-                <div class="row m-0 p-3 align-items-center border border-start-0 border-bottom-1 border-top-0 border-end-0">
-                  <i class="las la-utensils text-primary w-auto m-0 p-0 pe-2"></i>
-                  <h4 class="fw-bold fs-6 w-auto m-0 p-0">Menu Items</h4>
-                </div>
-                <form action="" class="m-0 p-3">
-                  <div class="row m-0 p-0 pt-3">
-                    <div class="col-4 m-0 p-0 pe-3">
-                      <p class="m-0 p-0 pb-2 text-secondary">Item Name</p>
-                      <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
-                        placeholder="Spicy Brunchi Burger">
-                    </div>
-      
-                    <div class="col-4 m-0 p-0 ps-3">
-                      <p class="m-0 p-0 pb-2 text-secondary">Category</p>
-                      <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
-                        placeholder="Fast Food">
-                    </div>
-      
-                    <div class="col-4 m-0 p-0 ps-3">
-                      <p class="m-0 p-0 pb-2 text-secondary">Price</p>
-                      <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
-                        placeholder="ex. 49 USD">
-                    </div>
-      
-                  </div>
-                  <p class="text-secondary m-0 mt-3 p-0 pb-2">About Item</p>
-                  <textarea name="" id="" cols="30" rows="6" class="form-control p-3"
-                    placeholder="Describe your Item"></textarea>
-                  <button type="submit" class="btn btn-primary mt-3">Add New</button>
-                </form>
-              </div>
+                <button type="submit" class="btn btn-primary mt-3">Submit & Preview</button>
 
-              <!-- ========================= Working Our ================================= -->
-              <div class="WorkingHours card m-0 mt-5 p-0 border-0">
-                <div class="row m-0 p-3 align-items-center border border-start-0 border-bottom-1 border-top-0 border-end-0">
-                  <i class="bi bi-clock-fill text-primary w-auto m-0 p-0 pe-2"></i>
-                  <h4 class="fw-bold fs-6 w-auto m-0 p-0">Working Hours</h4>
-                </div>
-                <form action="" class="m-0 p-3">
-                  <div class="row align-items-center justify-content-around pb-3 pt-3">
-                    <p class="m-0 p-0 text-secondary col-1">Monday</p>
-                    <div class="col-5 m-0 p-0 pe-3">
-                      <select class="form-select m-0 border-1 p-3" aria-label="select">
-                        <option selected>Opening Time</option>
-                        <option value="1">1:00 AM</option>
-                        <option value="2">2:00 AM</option>
-                        <option value="3">3:00 AM</option>
-                        <option value="4">4:00 AM</option>
-                        <option value="5">5:00 AM</option>
-                        <option value="6">6:00 AM</option>
-                        <option value="8">7:00 AM</option>
-                        <option value="9">8:00 AM</option>
-                        <option value="10">9:00 AM</option>
-                        <option value="11">10:00 AM</option>
-                        <option value="12">11:00 AM</option>
-                        <option value="13">12:00 PM</option>
-                        <option value="14">1:00 PM</option>
-                        <option value="15">2:00 PM</option>
-                        <option value="3">3:00 PM</option>
-                        <option value="4">4:00 PM</option>
-                        <option value="5">5:00 PM</option>
-                        <option value="6">6:00 PM</option>
-                        <option value="8">7:00 PM</option>
-                        <option value="9">8:00 PM</option>
-                        <option value="10">9:00 PM</option>
-                        <option value="11">10:00 PM</option>
-                        <option value="12">11:00 PM</option>
-                        <option value="13">Closing Time</option>
-                      </select>
-                    </div>
-                    <div class="col-5 m-0 p-0 pe-3">
-                      <select class="form-select m-0 border-1 p-3" aria-label="select">
-                        <option selected>Closing Time</option>
-                        <option value="1">1:00 AM</option>
-                        <option value="2">2:00 AM</option>
-                        <option value="3">3:00 AM</option>
-                        <option value="4">4:00 AM</option>
-                        <option value="5">5:00 AM</option>
-                        <option value="6">6:00 AM</option>
-                        <option value="8">7:00 AM</option>
-                        <option value="9">8:00 AM</option>
-                        <option value="10">9:00 AM</option>
-                        <option value="11">10:00 AM</option>
-                        <option value="12">11:00 AM</option>
-                        <option value="13">12:00 PM</option>
-                        <option value="14">1:00 PM</option>
-                        <option value="15">2:00 PM</option>
-                        <option value="3">3:00 PM</option>
-                        <option value="4">4:00 PM</option>
-                        <option value="5">5:00 PM</option>
-                        <option value="6">6:00 PM</option>
-                        <option value="8">7:00 PM</option>
-                        <option value="9">8:00 PM</option>
-                        <option value="10">9:00 PM</option>
-                        <option value="11">10:00 PM</option>
-                        <option value="12">11:00 PM</option>
-                        <option value="13">Opening Time</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="row align-items-center justify-content-around pb-3 pt-3">
-                    <p class="m-0 p-0 text-secondary col-1">Tuesday</p>
-                    <div class="col-5 m-0 p-0 pe-3">
-                      <select class="form-select m-0 border-1 p-3" aria-label="select">
-                        <option selected>Opening Time</option>
-                        <option value="1">1:00 AM</option>
-                        <option value="2">2:00 AM</option>
-                        <option value="3">3:00 AM</option>
-                        <option value="4">4:00 AM</option>
-                        <option value="5">5:00 AM</option>
-                        <option value="6">6:00 AM</option>
-                        <option value="8">7:00 AM</option>
-                        <option value="9">8:00 AM</option>
-                        <option value="10">9:00 AM</option>
-                        <option value="11">10:00 AM</option>
-                        <option value="12">11:00 AM</option>
-                        <option value="13">12:00 PM</option>
-                        <option value="14">1:00 PM</option>
-                        <option value="15">2:00 PM</option>
-                        <option value="3">3:00 PM</option>
-                        <option value="4">4:00 PM</option>
-                        <option value="5">5:00 PM</option>
-                        <option value="6">6:00 PM</option>
-                        <option value="8">7:00 PM</option>
-                        <option value="9">8:00 PM</option>
-                        <option value="10">9:00 PM</option>
-                        <option value="11">10:00 PM</option>
-                        <option value="12">11:00 PM</option>
-                        <option value="13">Closing Time</option>
-                      </select>
-                    </div>
-                    <div class="col-5 m-0 p-0 pe-3">
-                      <select class="form-select m-0 border-1 p-3" aria-label="select">
-                        <option selected>Closing Time</option>
-                        <option value="1">1:00 AM</option>
-                        <option value="2">2:00 AM</option>
-                        <option value="3">3:00 AM</option>
-                        <option value="4">4:00 AM</option>
-                        <option value="5">5:00 AM</option>
-                        <option value="6">6:00 AM</option>
-                        <option value="8">7:00 AM</option>
-                        <option value="9">8:00 AM</option>
-                        <option value="10">9:00 AM</option>
-                        <option value="11">10:00 AM</option>
-                        <option value="12">11:00 AM</option>
-                        <option value="13">12:00 PM</option>
-                        <option value="14">1:00 PM</option>
-                        <option value="15">2:00 PM</option>
-                        <option value="3">3:00 PM</option>
-                        <option value="4">4:00 PM</option>
-                        <option value="5">5:00 PM</option>
-                        <option value="6">6:00 PM</option>
-                        <option value="8">7:00 PM</option>
-                        <option value="9">8:00 PM</option>
-                        <option value="10">9:00 PM</option>
-                        <option value="11">10:00 PM</option>
-                        <option value="12">11:00 PM</option>
-                        <option value="13">Opening Time</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="row align-items-center justify-content-around pb-3 pt-3">
-                    <p class="m-0 p-0 text-secondary col-1">Wednessday</p>
-                    <div class="col-5 m-0 p-0 pe-3">
-                      <select class="form-select m-0 border-1 p-3" aria-label="select">
-                        <option selected>Opening Time</option>
-                        <option value="1">1:00 AM</option>
-                        <option value="2">2:00 AM</option>
-                        <option value="3">3:00 AM</option>
-                        <option value="4">4:00 AM</option>
-                        <option value="5">5:00 AM</option>
-                        <option value="6">6:00 AM</option>
-                        <option value="8">7:00 AM</option>
-                        <option value="9">8:00 AM</option>
-                        <option value="10">9:00 AM</option>
-                        <option value="11">10:00 AM</option>
-                        <option value="12">11:00 AM</option>
-                        <option value="13">12:00 PM</option>
-                        <option value="14">1:00 PM</option>
-                        <option value="15">2:00 PM</option>
-                        <option value="3">3:00 PM</option>
-                        <option value="4">4:00 PM</option>
-                        <option value="5">5:00 PM</option>
-                        <option value="6">6:00 PM</option>
-                        <option value="8">7:00 PM</option>
-                        <option value="9">8:00 PM</option>
-                        <option value="10">9:00 PM</option>
-                        <option value="11">10:00 PM</option>
-                        <option value="12">11:00 PM</option>
-                        <option value="13">Closing Time</option>
-                      </select>
-                    </div>
-                    <div class="col-5 m-0 p-0 pe-3">
-                      <select class="form-select m-0 border-1 p-3" aria-label="select">
-                        <option selected>Closing Time</option>
-                        <option value="1">1:00 AM</option>
-                        <option value="2">2:00 AM</option>
-                        <option value="3">3:00 AM</option>
-                        <option value="4">4:00 AM</option>
-                        <option value="5">5:00 AM</option>
-                        <option value="6">6:00 AM</option>
-                        <option value="8">7:00 AM</option>
-                        <option value="9">8:00 AM</option>
-                        <option value="10">9:00 AM</option>
-                        <option value="11">10:00 AM</option>
-                        <option value="12">11:00 AM</option>
-                        <option value="13">12:00 PM</option>
-                        <option value="14">1:00 PM</option>
-                        <option value="15">2:00 PM</option>
-                        <option value="3">3:00 PM</option>
-                        <option value="4">4:00 PM</option>
-                        <option value="5">5:00 PM</option>
-                        <option value="6">6:00 PM</option>
-                        <option value="8">7:00 PM</option>
-                        <option value="9">8:00 PM</option>
-                        <option value="10">9:00 PM</option>
-                        <option value="11">10:00 PM</option>
-                        <option value="12">11:00 PM</option>
-                        <option value="13">Opening Time</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="row align-items-center justify-content-around pb-3 pt-3">
-                    <p class="m-0 p-0 text-secondary col-1">Thursday</p>
-                    <div class="col-5 m-0 p-0 pe-3">
-                      <select class="form-select m-0 border-1 p-3" aria-label="select">
-                        <option selected>Opening Time</option>
-                        <option value="1">1:00 AM</option>
-                        <option value="2">2:00 AM</option>
-                        <option value="3">3:00 AM</option>
-                        <option value="4">4:00 AM</option>
-                        <option value="5">5:00 AM</option>
-                        <option value="6">6:00 AM</option>
-                        <option value="8">7:00 AM</option>
-                        <option value="9">8:00 AM</option>
-                        <option value="10">9:00 AM</option>
-                        <option value="11">10:00 AM</option>
-                        <option value="12">11:00 AM</option>
-                        <option value="13">12:00 PM</option>
-                        <option value="14">1:00 PM</option>
-                        <option value="15">2:00 PM</option>
-                        <option value="3">3:00 PM</option>
-                        <option value="4">4:00 PM</option>
-                        <option value="5">5:00 PM</option>
-                        <option value="6">6:00 PM</option>
-                        <option value="8">7:00 PM</option>
-                        <option value="9">8:00 PM</option>
-                        <option value="10">9:00 PM</option>
-                        <option value="11">10:00 PM</option>
-                        <option value="12">11:00 PM</option>
-                        <option value="13">Closing Time</option>
-                      </select>
-                    </div>
-                    <div class="col-5 m-0 p-0 pe-3">
-                      <select class="form-select m-0 border-1 p-3" aria-label="select">
-                        <option selected>Closing Time</option>
-                        <option value="1">1:00 AM</option>
-                        <option value="2">2:00 AM</option>
-                        <option value="3">3:00 AM</option>
-                        <option value="4">4:00 AM</option>
-                        <option value="5">5:00 AM</option>
-                        <option value="6">6:00 AM</option>
-                        <option value="8">7:00 AM</option>
-                        <option value="9">8:00 AM</option>
-                        <option value="10">9:00 AM</option>
-                        <option value="11">10:00 AM</option>
-                        <option value="12">11:00 AM</option>
-                        <option value="13">12:00 PM</option>
-                        <option value="14">1:00 PM</option>
-                        <option value="15">2:00 PM</option>
-                        <option value="3">3:00 PM</option>
-                        <option value="4">4:00 PM</option>
-                        <option value="5">5:00 PM</option>
-                        <option value="6">6:00 PM</option>
-                        <option value="8">7:00 PM</option>
-                        <option value="9">8:00 PM</option>
-                        <option value="10">9:00 PM</option>
-                        <option value="11">10:00 PM</option>
-                        <option value="12">11:00 PM</option>
-                        <option value="13">Opening Time</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="row align-items-center justify-content-around pb-3 pt-3">
-                    <p class="m-0 p-0 text-secondary col-1">Friday</p>
-                    <div class="col-5 m-0 p-0 pe-3">
-                      <select class="form-select m-0 border-1 p-3" aria-label="select">
-                        <option selected>Opening Time</option>
-                        <option value="1">1:00 AM</option>
-                        <option value="2">2:00 AM</option>
-                        <option value="3">3:00 AM</option>
-                        <option value="4">4:00 AM</option>
-                        <option value="5">5:00 AM</option>
-                        <option value="6">6:00 AM</option>
-                        <option value="8">7:00 AM</option>
-                        <option value="9">8:00 AM</option>
-                        <option value="10">9:00 AM</option>
-                        <option value="11">10:00 AM</option>
-                        <option value="12">11:00 AM</option>
-                        <option value="13">12:00 PM</option>
-                        <option value="14">1:00 PM</option>
-                        <option value="15">2:00 PM</option>
-                        <option value="3">3:00 PM</option>
-                        <option value="4">4:00 PM</option>
-                        <option value="5">5:00 PM</option>
-                        <option value="6">6:00 PM</option>
-                        <option value="8">7:00 PM</option>
-                        <option value="9">8:00 PM</option>
-                        <option value="10">9:00 PM</option>
-                        <option value="11">10:00 PM</option>
-                        <option value="12">11:00 PM</option>
-                        <option value="13">Closing Time</option>
-                      </select>
-                    </div>
-                    <div class="col-5 m-0 p-0 pe-3">
-                      <select class="form-select m-0 border-1 p-3" aria-label="select">
-                        <option selected>Closing Time</option>
-                        <option value="1">1:00 AM</option>
-                        <option value="2">2:00 AM</option>
-                        <option value="3">3:00 AM</option>
-                        <option value="4">4:00 AM</option>
-                        <option value="5">5:00 AM</option>
-                        <option value="6">6:00 AM</option>
-                        <option value="8">7:00 AM</option>
-                        <option value="9">8:00 AM</option>
-                        <option value="10">9:00 AM</option>
-                        <option value="11">10:00 AM</option>
-                        <option value="12">11:00 AM</option>
-                        <option value="13">12:00 PM</option>
-                        <option value="14">1:00 PM</option>
-                        <option value="15">2:00 PM</option>
-                        <option value="3">3:00 PM</option>
-                        <option value="4">4:00 PM</option>
-                        <option value="5">5:00 PM</option>
-                        <option value="6">6:00 PM</option>
-                        <option value="8">7:00 PM</option>
-                        <option value="9">8:00 PM</option>
-                        <option value="10">9:00 PM</option>
-                        <option value="11">10:00 PM</option>
-                        <option value="12">11:00 PM</option>
-                        <option value="13">Opening Time</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="row align-items-center justify-content-around pb-3 pt-3">
-                    <p class="m-0 p-0 text-secondary col-1">Saturday</p>
-                    <div class="col-5 m-0 p-0 pe-3">
-                      <select class="form-select m-0 border-1 p-3" aria-label="select">
-                        <option selected>Opening Time</option>
-                        <option value="1">1:00 AM</option>
-                        <option value="2">2:00 AM</option>
-                        <option value="3">3:00 AM</option>
-                        <option value="4">4:00 AM</option>
-                        <option value="5">5:00 AM</option>
-                        <option value="6">6:00 AM</option>
-                        <option value="8">7:00 AM</option>
-                        <option value="9">8:00 AM</option>
-                        <option value="10">9:00 AM</option>
-                        <option value="11">10:00 AM</option>
-                        <option value="12">11:00 AM</option>
-                        <option value="13">12:00 PM</option>
-                        <option value="14">1:00 PM</option>
-                        <option value="15">2:00 PM</option>
-                        <option value="3">3:00 PM</option>
-                        <option value="4">4:00 PM</option>
-                        <option value="5">5:00 PM</option>
-                        <option value="6">6:00 PM</option>
-                        <option value="8">7:00 PM</option>
-                        <option value="9">8:00 PM</option>
-                        <option value="10">9:00 PM</option>
-                        <option value="11">10:00 PM</option>
-                        <option value="12">11:00 PM</option>
-                        <option value="13">Closing Time</option>
-                      </select>
-                    </div>
-                    <div class="col-5 m-0 p-0 pe-3">
-                      <select class="form-select m-0 border-1 p-3" aria-label="select">
-                        <option selected>Closing Time</option>
-                        <option value="1">1:00 AM</option>
-                        <option value="2">2:00 AM</option>
-                        <option value="3">3:00 AM</option>
-                        <option value="4">4:00 AM</option>
-                        <option value="5">5:00 AM</option>
-                        <option value="6">6:00 AM</option>
-                        <option value="8">7:00 AM</option>
-                        <option value="9">8:00 AM</option>
-                        <option value="10">9:00 AM</option>
-                        <option value="11">10:00 AM</option>
-                        <option value="12">11:00 AM</option>
-                        <option value="13">12:00 PM</option>
-                        <option value="14">1:00 PM</option>
-                        <option value="15">2:00 PM</option>
-                        <option value="3">3:00 PM</option>
-                        <option value="4">4:00 PM</option>
-                        <option value="5">5:00 PM</option>
-                        <option value="6">6:00 PM</option>
-                        <option value="8">7:00 PM</option>
-                        <option value="9">8:00 PM</option>
-                        <option value="10">9:00 PM</option>
-                        <option value="11">10:00 PM</option>
-                        <option value="12">11:00 PM</option>
-                        <option value="13">Opening Time</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="row align-items-center justify-content-around pb-3 pt-3">
-                    <p class="m-0 p-0 text-secondary col-1">Sunday</p>
-                    <div class="col-5 m-0 p-0 pe-3">
-                      <select class="form-select m-0 border-1 p-3" aria-label="select">
-                        <option selected>Opening Time</option>
-                        <option value="1">1:00 AM</option>
-                        <option value="2">2:00 AM</option>
-                        <option value="3">3:00 AM</option>
-                        <option value="4">4:00 AM</option>
-                        <option value="5">5:00 AM</option>
-                        <option value="6">6:00 AM</option>
-                        <option value="8">7:00 AM</option>
-                        <option value="9">8:00 AM</option>
-                        <option value="10">9:00 AM</option>
-                        <option value="11">10:00 AM</option>
-                        <option value="12">11:00 AM</option>
-                        <option value="13">12:00 PM</option>
-                        <option value="14">1:00 PM</option>
-                        <option value="15">2:00 PM</option>
-                        <option value="3">3:00 PM</option>
-                        <option value="4">4:00 PM</option>
-                        <option value="5">5:00 PM</option>
-                        <option value="6">6:00 PM</option>
-                        <option value="8">7:00 PM</option>
-                        <option value="9">8:00 PM</option>
-                        <option value="10">9:00 PM</option>
-                        <option value="11">10:00 PM</option>
-                        <option value="12">11:00 PM</option>
-                        <option value="13">Closing Time</option>
-                      </select>
-                    </div>
-                    <div class="col-5 m-0 p-0 pe-3">
-                      <select class="form-select m-0 border-1 p-3" aria-label="select">
-                        <option selected>Closing Time</option>
-                        <option value="1">1:00 AM</option>
-                        <option value="2">2:00 AM</option>
-                        <option value="3">3:00 AM</option>
-                        <option value="4">4:00 AM</option>
-                        <option value="5">5:00 AM</option>
-                        <option value="6">6:00 AM</option>
-                        <option value="8">7:00 AM</option>
-                        <option value="9">8:00 AM</option>
-                        <option value="10">9:00 AM</option>
-                        <option value="11">10:00 AM</option>
-                        <option value="12">11:00 AM</option>
-                        <option value="13">12:00 PM</option>
-                        <option value="14">1:00 PM</option>
-                        <option value="15">2:00 PM</option>
-                        <option value="3">3:00 PM</option>
-                        <option value="4">4:00 PM</option>
-                        <option value="5">5:00 PM</option>
-                        <option value="6">6:00 PM</option>
-                        <option value="8">7:00 PM</option>
-                        <option value="9">8:00 PM</option>
-                        <option value="10">9:00 PM</option>
-                        <option value="11">10:00 PM</option>
-                        <option value="12">11:00 PM</option>
-                        <option value="13">Opening Time</option>
-                      </select>
-                    </div>
-                  </div>
-                </form>
-              </div>
-      
-              <!-- ========================= Amentities Info ================================= -->
-
-              <div class="AmentiesOptions card m-0 mt-5 p-0 border-0">
-                <div class="row m-0 p-3 align-items-center border border-start-0 border-bottom-1 border-top-0 border-end-0">
-                  <i class="bi bi-cup-hot text-primary w-auto m-0 p-0 pe-2"></i>
-                  <h4 class="fw-bold fs-6 w-auto m-0 p-0">Amenties Options</h4>
-                </div>
-                <form action="" class="m-0 p-3">
-                  <div class="row m-0 p-0 mb-3">
-                    <div class="col-4 d-flex align-items-center ">
-                      <input type="checkbox">
-                      <label for="" class="text-secondary m-0 p-0 ps-2">Health Score 8.7/10</label>
-                    </div>
-                    <div class="col-4 d-flex align-items-center ">
-                      <input type="checkbox">
-                      <label for="" class="text-secondary m-0 p-0 ps-2">Reservations</label>
-                    </div>
-                    <div class="col-4 d-flex align-items-center ">
-                      <input type="checkbox">
-                      <label for="" class="text-secondary m-0 p-0 ps-2">Vegetarian Options</label>
-                    </div>
-                  </div>
-                  <div class="row m-0 p-0 mb-3 mt-3">
-                    <div class="col-4 d-flex align-items-center ">
-                      <input type="checkbox">
-                      <label for="" class="text-secondary m-0 p-0 ps-2">Moderate Noise</label>
-                    </div>
-                    <div class="col-4 d-flex align-items-center ">
-                      <input type="checkbox">
-                      <label for="" class="text-secondary m-0 p-0 ps-2">Good For Kids</label>
-                    </div>
-                    <div class="col-4 d-flex align-items-center ">
-                      <input type="checkbox">
-                      <label for="" class="text-secondary m-0 p-0 ps-2">Private Lot Parking</label>
-                    </div>
-                  </div>
-                  <div class="row m-0 p-0 mb-3 mt-3">
-                    <div class="col-4 d-flex align-items-center ">
-                      <input type="checkbox">
-                      <label for="" class="text-secondary m-0 p-0 ps-2">Beer & Wine</label>
-                    </div>
-                    <div class="col-4 d-flex align-items-center ">
-                      <input type="checkbox">
-                      <label for="" class="text-secondary m-0 p-0 ps-2">TV Services</label>
-                    </div>
-                    <div class="col-4 d-flex align-items-center ">
-                      <input type="checkbox">
-                      <label for="" class="text-secondary m-0 p-0 ps-2">Pets Allow</label>
-                    </div>
-                  </div>
-                  <div class="row m-0 p-0 mb-3 mt-3">
-                    <div class="col-4 d-flex align-items-center ">
-                      <input type="checkbox">
-                      <label for="" class="text-secondary m-0 p-0 ps-2">Offers Delivery</label>
-                    </div>
-                    <div class="col-4 d-flex align-items-center ">
-                      <input type="checkbox">
-                      <label for="" class="text-secondary m-0 p-0 ps-2">Staff wears masks</label>
-                    </div>
-                    <div class="col-4 d-flex align-items-center ">
-                      <input type="checkbox">
-                      <label for="" class="text-secondary m-0 p-0 ps-2">Accepts Credit Cards</label>
-                    </div>
-                  </div>
-                  <div class="row m-0 p-0 mb-3 mt-3">
-                    <div class="col-4 d-flex align-items-center ">
-                      <input type="checkbox">
-                      <label for="" class="text-secondary m-0 p-0 ps-2">Offers Catering</label>
-                    </div>
-                    <div class="col-4 d-flex align-items-center ">
-                      <input type="checkbox">
-                      <label for="" class="text-secondary m-0 p-0 ps-2">Good for Breakfast</label>
-                    </div>
-                    <div class="col-4 d-flex align-items-center ">
-                      <input type="checkbox">
-                      <label for="" class="text-secondary m-0 p-0 ps-2">Waiter Service</label>
-                    </div>
-                  </div>
-                  <div class="row m-0 p-0 mb-3 mt-3">
-                    <div class="col-4 d-flex align-items-center ">
-                      <input type="checkbox">
-                      <label for="" class="text-secondary m-0 p-0 ps-2">Drive-Thru</label>
-                    </div>
-                    <div class="col-4 d-flex align-items-center ">
-                      <input type="checkbox">
-                      <label for="" class="text-secondary m-0 p-0 ps-2">Outdoor Seating</label>
-                    </div>
-                    <div class="col-4 d-flex align-items-center ">
-                      <input type="checkbox">
-                      <label for="" class="text-secondary m-0 p-0 ps-2">Offers Takeout</label>
-                    </div>
-                  </div>
-                  <div class="row m-0 p-0 mb-3 mt-3">
-                    <div class="col-4 d-flex align-items-center ">
-                      <input type="checkbox">
-                      <label for="" class="text-secondary m-0 p-0 ps-2">Vegan Options</label>
-                    </div>
-                    <div class="col-4 d-flex align-items-center ">
-                      <input type="checkbox">
-                      <label for="" class="text-secondary m-0 p-0 ps-2">Casual</label>
-                    </div>
-                    <div class="col-4 d-flex align-items-center ">
-                      <input type="checkbox">
-                      <label for="" class="text-secondary m-0 p-0 ps-2">Good for Groups</label>
-                    </div>
-                  </div>
-                  <div class="row m-0 p-0 mb-3 mt-3">
-                    <div class="col-4 d-flex align-items-center ">
-                      <input type="checkbox">
-                      <label for="" class="text-secondary m-0 p-0 ps-2">Brunch,Lunch,Dinner</label>
-                    </div>
-                    <div class="col-4 d-flex align-items-center ">
-                      <input type="checkbox">
-                      <label for="" class="text-secondary m-0 p-0 ps-2">Free Wi-Fi</label>
-                    </div>
-                    <div class="col-4 d-flex align-items-center ">
-                      <input type="checkbox">
-                      <label for="" class="text-secondary m-0 p-0 ps-2">Wheelchair Accessible</label>
-                    </div>
-                  </div>
-                </form>
-              </div>
-      
-              <!-- ========================= Social Links Info ================================= -->
-              
-              <div class="SocialLinks card m-0 mt-5 p-0 border-0">
-                <div class="row m-0 p-3 align-items-center border border-start-0 border-bottom-1 border-top-0 border-end-0">
-                  <i class="bi bi-people-fill text-primary w-auto m-0 p-0 pe-2"></i>
-                  <h4 class="fw-bold fs-6 w-auto m-0 p-0">Social Links</h4>
-                </div>
-                <form action="" class="m-0 p-3">
-                  <div class="row m-0 p-0 pt-3">
-                    <div class="col-6 m-0 p-0 pe-3">
-                      <div class="row m-0 p-0 d-flex align-items-center mb-2">
-                        <i class="fa fa-facebook-f text-primary w-auto m-0 p-0 fs-5"></i>
-                        <p class="m-0 p-0 text-secondary w-auto ps-2">Facebook</p>  
-                      </div>
-                      <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
-                        placeholder="https://facebook.com/">
-                    </div>
-      
-                    <div class="col-6 m-0 p-0 ps-3">
-                      <div class="row m-0 p-0 d-flex align-items-center mb-2">
-                        <i class="fa fa-twitter text-primary w-auto m-0 p-0 fs-5"></i>
-                        <p class="m-0 p-0 text-secondary w-auto ps-2">Twitter</p>  
-                      </div>
-                      <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
-                        placeholder="https://twitter.com/">
-                    </div>
-      
-                  </div>
-                  <div class="row m-0 p-0 pt-3">
-                    <div class="col-6 m-0 p-0 pe-3">
-                      <div class="row m-0 p-0 d-flex align-items-center mb-2">
-                        <i class="fa fa-instagram text-primary w-auto m-0 p-0 fs-5"></i>
-                        <p class="m-0 p-0 text-secondary w-auto ps-2">Instagram</p>  
-                      </div>
-                      <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
-                        placeholder="https://instagram.com/">
-                    </div>
-      
-                    <div class="col-6 m-0 p-0 ps-3">
-                      <div class="row m-0 p-0 d-flex align-items-center mb-2">
-                        <i class="fa fa-linkedin text-primary w-auto m-0 p-0 fs-5"></i>
-                        <p class="m-0 p-0 text-secondary w-auto ps-2">Linkedin</p>  
-                      </div>
-                      <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
-                        placeholder="https://linkedin.com/">
-                    </div>
-      
-                  </div>
-                  <button type="submit" class="btn btn-primary mt-3">Submit & Preview</button>
-                </form>
-              </div>
+              </form>
             </div>
-        </div>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    <script src="./assests/js/userDashboard_js/script.js"></script>
-    <script src="./assests/js/userDashboard_js/profileToolpit.js"></script>
-    <script src="./assests/js/adminDashboard_js/addListing.js"></script>
+            <!-- ========================= location Info ================================= -->
+            <div class="locationInfo card m-0 mt-5 p-0 border-0">
+              <div
+                class="row m-0 p-3 align-items-center border border-start-0 border-bottom-1 border-top-0 border-end-0">
+                <i class="bi bi-geo-alt-fill text-primary w-auto m-0 p-0 pe-2"></i>
+                <h4 class="fw-bold fs-6 w-auto m-0 p-0">Location Info</h4>
+              </div>
+              <form action="/addLocality" method="post" class="m-0 p-3">
+
+                <div class="row m-0 p-0 pt-3">
+                  <div class="col-6 m-0 p-0 pe-3">
+                    <p class="m-0 p-0 pb-2 text-secondary">Lattitude</p>
+                    <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
+                      placeholder="8054256" name="lattitude">
+                  </div>
+
+                  <div class="col-6 m-0 p-0 ps-3">
+                    <p class="m-0 p-0 pb-2 text-secondary">Longitude</p>
+                    <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
+                      placeholder="-7254625" name="longitude">
+                  </div>
+
+                </div>
+                <div class="row m-0 p-0 pt-3">
+                  <iframe class="m-0 p-0"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.68773947089!2d78.35877297462784!3d17.426766901670543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93f5ada6d80f%3A0x6d6400aee08b61a1!2sMaulana%20Azad%20National%20Urdu%20University!5e0!3m2!1sen!2sin!4v1701894706945!5m2!1sen!2sin"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="row m-0 p-0 pt-3">
+                  <div class="col-6 m-0 p-0 pe-3">
+                    <p class="m-0 p-0 pb-2 text-secondary">States</p>
+                    <select class="form-select m-0 border-1 p-3" aria-label="select" name="state">
+                      <option selected>Bihar</option>
+                      <option value="Telangana">Telangana</option>
+                      <option value="Gujrat">Gujrat</option>
+                      <option value="UP">UP</option>
+                      <option value="4">Goa</option>
+                      <option value="4">Delhi</option>
+                      <option value="4">Kerala</option>
+                      <option value="4">Tamil Nadu</option>
+
+                    </select>
+                  </div>
+
+                  <div class="col-6 m-0 p-0 ps-3">
+                    <p class="m-0 p-0 pb-2 text-secondary">City</p>
+                    <select class="form-select m-0 border-1 p-3" aria-label="select" name="city">
+                      <option selected>Darbhanga</option>
+                      <option value="Hyderabad">Hyderabad</option>
+                      <option value="Patna">Patna</option>
+                      <option value="3">Aligarh</option>
+                      <option value="4">Allahabad</option>
+                      <option value="4">Muzzaffarpur</option>
+                      <option value="4">Agra</option>
+                      <option value="4">Lucknow</option>
+
+                    </select>
+                  </div>
+
+                </div>
+                <div class="row m-0 p-0 pt-3">
+                  <div class="col-6 m-0 p-0 pe-3">
+                    <p class="m-0 p-0 pb-2 text-secondary">Address</p>
+                    <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
+                      placeholder="ward 05, Near Jama masjid,Hayaghat" name="address">
+                  </div>
+
+                  <div class="col-6 m-0 p-0 ps-3">
+                    <p class="m-0 p-0 pb-2 text-secondary">Zip Code</p>
+                    <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
+                      placeholder="847301" name="pin">
+                  </div>
+
+                </div>
+                <div class="row m-0 p-0 pt-3">
+                  <div class="col-6 m-0 p-0 pe-3">
+                    <p class="m-0 p-0 pb-2 text-secondary">Mobile</p>
+                    <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
+                      placeholder="+91 9973152523" name="mobile">
+                  </div>
+
+                  <div class="col-6 m-0 p-0 ps-3">
+                    <p class="m-0 p-0 pb-2 text-secondary">Email</p>
+                    <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
+                      placeholder="hibbanrahmanhyt@gmail.com" name="email">
+                  </div>
+
+                </div>
+                <p class="text-secondary m-0 mt-3 p-0 pb-2">Website</p>
+                <input type="text" id="listingWebsite" class="input-group rounded-2 border border-1 p-3 mt-2"
+                  placeholder="https://hibbanur-rahman.me/hotel-booking.com" name="website">
+                <button type="submit" class="btn btn-primary mt-3">Submit & Preview</button>
+              </form>
+            </div>
+
+            <!-- ========================= Image Gallery ================================= -->
+
+            <div class="ImageGallery card m-0 mt-5 p-0 border-0">
+              <div
+                class="row m-0 p-3 align-items-center border border-start-0 border-bottom-1 border-top-0 border-end-0">
+                <i class="bi bi-camera-fill text-primary w-auto m-0 p-0 pe-2"></i>
+                <h4 class="fw-bold fs-6 w-auto m-0 p-0">Image & Gallery Option</h4>
+              </div>
+              <form action="" class="m-0 p-3">
+                <div class="row m-0 p-0">
+                  <div class="col-4 uploadFile">
+                    <p class="m-0 p-0 pb-2 text-secondary">Upload Logo</p>
+                    <div
+                      class="imagePreviewCard card  p-0 m-0 d-flex justify-content-center align-items-center rounded-4 d-none">
+                      <img src="./images/adminDashboard/car-img.png" alt="" class="img-fluid rounded-4 h-100 w-auto">
+                    </div>
+                    <div
+                      class="imgInputFeildCard card d-flex justify-content-center align-items-center border-0 rounded-4">
+                      <div class="inputField uploadFile row p-0  m-0 h-100 w-100">
+                        <input type="file" id="profilePhotoUpload" accept=".png,.jpg,.jpeg"
+                          class="m-0 w-100 p-0 border border-0">
+                      </div>
+                      <img src="./images/adminDashboard/upload-icon.png" alt="" width="50" height="50"
+                        class="img-fluid m-0 p-0 position-absolute bottom-50">
+
+                      <p class="m-0 p-0 text-secondary position-absolute pt-5">Drag files here to upload</p>
+                    </div>
+                    <p class="m-0 p-0 pb-2 pt-2 text-secondary">Maximum file size: 2 MB.</p>
+                  </div>
+                  <div class="col-4 uploadFile">
+                    <p class="m-0 p-0 pb-2 text-secondary">Featured Image</p>
+                    <div
+                      class="imagePreviewCard card  p-0 m-0 d-flex justify-content-center align-items-center rounded-4 d-none">
+                      <img src="./images/adminDashboard/car-img.png" alt="" class="img-fluid rounded-4 h-100 w-auto">
+                    </div>
+                    <div
+                      class="imgInputFeildCard card d-flex justify-content-center align-items-center border-0 rounded-4">
+                      <div class="inputField uploadFile row p-0  m-0 h-100 w-100">
+                        <input type="file" id="profilePhotoUpload" accept=".png,.jpg,.jpeg"
+                          class="m-0 w-100 p-0 border border-0">
+                      </div>
+                      <img src="./images/adminDashboard/upload-icon.png" alt="" width="50" height="50"
+                        class="img-fluid m-0 p-0 position-absolute bottom-50">
+
+                      <p class="m-0 p-0 text-secondary position-absolute pt-5">Drag files here to upload</p>
+                    </div>
+                    <p class="m-0 p-0 pb-2 pt-2 text-secondary">Maximum file size: 2 MB.</p>
+
+                  </div>
+                  <div class="col-4 uploadFile">
+                    <p class="m-0 p-0 pb-2 text-secondary">Image Gallery</p>
+                    <div
+                      class="imagePreviewCard card  p-0 m-0 d-flex justify-content-center align-items-center rounded-4 d-none">
+                      <img src="./images/adminDashboard/car-img.png" alt="" class="img-fluid rounded-4 h-100 w-auto">
+                    </div>
+                    <div
+                      class="imgInputFeildCard card d-flex justify-content-center align-items-center border-0 rounded-4">
+                      <div class="inputField uploadFile row p-0  m-0 h-100 w-100">
+                        <input type="file" id="profilePhotoUpload" accept=".png,.jpg,.jpeg"
+                          class="m-0 w-100 p-0 border border-0">
+                      </div>
+                      <img src="./images/adminDashboard/upload-icon.png" alt="" width="50" height="50"
+                        class="img-fluid m-0 p-0 position-absolute bottom-50">
+
+                      <p class="m-0 p-0 text-secondary position-absolute pt-5">Drag files here to upload</p>
+                    </div>
+                    <p class="m-0 p-0 pb-2 pt-2 text-secondary">Maximum file size: 2 MB.</p>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+
+            <!-- ========================= Menue Items ================================= -->
+            <div class="menuItems card m-0 mt-5 p-0 border-0">
+              <div
+                class="row m-0 p-3 align-items-center border border-start-0 border-bottom-1 border-top-0 border-end-0">
+                <i class="las la-utensils text-primary w-auto m-0 p-0 pe-2"></i>
+                <h4 class="fw-bold fs-6 w-auto m-0 p-0">Menu Items</h4>
+              </div>
+              <form action="" class="m-0 p-3">
+                <div class="row m-0 p-0 pt-3">
+                  <div class="col-4 m-0 p-0 pe-3">
+                    <p class="m-0 p-0 pb-2 text-secondary">Item Name</p>
+                    <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
+                      placeholder="Spicy Brunchi Burger">
+                  </div>
+
+                  <div class="col-4 m-0 p-0 ps-3">
+                    <p class="m-0 p-0 pb-2 text-secondary">Category</p>
+                    <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
+                      placeholder="Fast Food">
+                  </div>
+
+                  <div class="col-4 m-0 p-0 ps-3">
+                    <p class="m-0 p-0 pb-2 text-secondary">Price</p>
+                    <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
+                      placeholder="ex. 49 USD">
+                  </div>
+
+                </div>
+                <p class="text-secondary m-0 mt-3 p-0 pb-2">About Item</p>
+                <textarea name="" id="" cols="30" rows="6" class="form-control p-3"
+                  placeholder="Describe your Item"></textarea>
+                <button type="submit" class="btn btn-primary mt-3">Add New</button>
+              </form>
+            </div>
+
+            <!-- ========================= Working Our ================================= -->
+            <div class="WorkingHours card m-0 mt-5 p-0 border-0">
+              <div
+                class="row m-0 p-3 align-items-center border border-start-0 border-bottom-1 border-top-0 border-end-0">
+                <i class="bi bi-clock-fill text-primary w-auto m-0 p-0 pe-2"></i>
+                <h4 class="fw-bold fs-6 w-auto m-0 p-0">Working Hours</h4>
+              </div>
+              <form action="" class="m-0 p-3">
+                <div class="row align-items-center justify-content-around pb-3 pt-3">
+                  <p class="m-0 p-0 text-secondary col-1">Monday</p>
+                  <div class="col-5 m-0 p-0 pe-3">
+                    <select class="form-select m-0 border-1 p-3" aria-label="select">
+                      <option selected>Opening Time</option>
+                      <option value="1">1:00 AM</option>
+                      <option value="2">2:00 AM</option>
+                      <option value="3">3:00 AM</option>
+                      <option value="4">4:00 AM</option>
+                      <option value="5">5:00 AM</option>
+                      <option value="6">6:00 AM</option>
+                      <option value="8">7:00 AM</option>
+                      <option value="9">8:00 AM</option>
+                      <option value="10">9:00 AM</option>
+                      <option value="11">10:00 AM</option>
+                      <option value="12">11:00 AM</option>
+                      <option value="13">12:00 PM</option>
+                      <option value="14">1:00 PM</option>
+                      <option value="15">2:00 PM</option>
+                      <option value="3">3:00 PM</option>
+                      <option value="4">4:00 PM</option>
+                      <option value="5">5:00 PM</option>
+                      <option value="6">6:00 PM</option>
+                      <option value="8">7:00 PM</option>
+                      <option value="9">8:00 PM</option>
+                      <option value="10">9:00 PM</option>
+                      <option value="11">10:00 PM</option>
+                      <option value="12">11:00 PM</option>
+                      <option value="13">Closing Time</option>
+                    </select>
+                  </div>
+                  <div class="col-5 m-0 p-0 pe-3">
+                    <select class="form-select m-0 border-1 p-3" aria-label="select">
+                      <option selected>Closing Time</option>
+                      <option value="1">1:00 AM</option>
+                      <option value="2">2:00 AM</option>
+                      <option value="3">3:00 AM</option>
+                      <option value="4">4:00 AM</option>
+                      <option value="5">5:00 AM</option>
+                      <option value="6">6:00 AM</option>
+                      <option value="8">7:00 AM</option>
+                      <option value="9">8:00 AM</option>
+                      <option value="10">9:00 AM</option>
+                      <option value="11">10:00 AM</option>
+                      <option value="12">11:00 AM</option>
+                      <option value="13">12:00 PM</option>
+                      <option value="14">1:00 PM</option>
+                      <option value="15">2:00 PM</option>
+                      <option value="3">3:00 PM</option>
+                      <option value="4">4:00 PM</option>
+                      <option value="5">5:00 PM</option>
+                      <option value="6">6:00 PM</option>
+                      <option value="8">7:00 PM</option>
+                      <option value="9">8:00 PM</option>
+                      <option value="10">9:00 PM</option>
+                      <option value="11">10:00 PM</option>
+                      <option value="12">11:00 PM</option>
+                      <option value="13">Opening Time</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row align-items-center justify-content-around pb-3 pt-3">
+                  <p class="m-0 p-0 text-secondary col-1">Tuesday</p>
+                  <div class="col-5 m-0 p-0 pe-3">
+                    <select class="form-select m-0 border-1 p-3" aria-label="select">
+                      <option selected>Opening Time</option>
+                      <option value="1">1:00 AM</option>
+                      <option value="2">2:00 AM</option>
+                      <option value="3">3:00 AM</option>
+                      <option value="4">4:00 AM</option>
+                      <option value="5">5:00 AM</option>
+                      <option value="6">6:00 AM</option>
+                      <option value="8">7:00 AM</option>
+                      <option value="9">8:00 AM</option>
+                      <option value="10">9:00 AM</option>
+                      <option value="11">10:00 AM</option>
+                      <option value="12">11:00 AM</option>
+                      <option value="13">12:00 PM</option>
+                      <option value="14">1:00 PM</option>
+                      <option value="15">2:00 PM</option>
+                      <option value="3">3:00 PM</option>
+                      <option value="4">4:00 PM</option>
+                      <option value="5">5:00 PM</option>
+                      <option value="6">6:00 PM</option>
+                      <option value="8">7:00 PM</option>
+                      <option value="9">8:00 PM</option>
+                      <option value="10">9:00 PM</option>
+                      <option value="11">10:00 PM</option>
+                      <option value="12">11:00 PM</option>
+                      <option value="13">Closing Time</option>
+                    </select>
+                  </div>
+                  <div class="col-5 m-0 p-0 pe-3">
+                    <select class="form-select m-0 border-1 p-3" aria-label="select">
+                      <option selected>Closing Time</option>
+                      <option value="1">1:00 AM</option>
+                      <option value="2">2:00 AM</option>
+                      <option value="3">3:00 AM</option>
+                      <option value="4">4:00 AM</option>
+                      <option value="5">5:00 AM</option>
+                      <option value="6">6:00 AM</option>
+                      <option value="8">7:00 AM</option>
+                      <option value="9">8:00 AM</option>
+                      <option value="10">9:00 AM</option>
+                      <option value="11">10:00 AM</option>
+                      <option value="12">11:00 AM</option>
+                      <option value="13">12:00 PM</option>
+                      <option value="14">1:00 PM</option>
+                      <option value="15">2:00 PM</option>
+                      <option value="3">3:00 PM</option>
+                      <option value="4">4:00 PM</option>
+                      <option value="5">5:00 PM</option>
+                      <option value="6">6:00 PM</option>
+                      <option value="8">7:00 PM</option>
+                      <option value="9">8:00 PM</option>
+                      <option value="10">9:00 PM</option>
+                      <option value="11">10:00 PM</option>
+                      <option value="12">11:00 PM</option>
+                      <option value="13">Opening Time</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row align-items-center justify-content-around pb-3 pt-3">
+                  <p class="m-0 p-0 text-secondary col-1">Wednessday</p>
+                  <div class="col-5 m-0 p-0 pe-3">
+                    <select class="form-select m-0 border-1 p-3" aria-label="select">
+                      <option selected>Opening Time</option>
+                      <option value="1">1:00 AM</option>
+                      <option value="2">2:00 AM</option>
+                      <option value="3">3:00 AM</option>
+                      <option value="4">4:00 AM</option>
+                      <option value="5">5:00 AM</option>
+                      <option value="6">6:00 AM</option>
+                      <option value="8">7:00 AM</option>
+                      <option value="9">8:00 AM</option>
+                      <option value="10">9:00 AM</option>
+                      <option value="11">10:00 AM</option>
+                      <option value="12">11:00 AM</option>
+                      <option value="13">12:00 PM</option>
+                      <option value="14">1:00 PM</option>
+                      <option value="15">2:00 PM</option>
+                      <option value="3">3:00 PM</option>
+                      <option value="4">4:00 PM</option>
+                      <option value="5">5:00 PM</option>
+                      <option value="6">6:00 PM</option>
+                      <option value="8">7:00 PM</option>
+                      <option value="9">8:00 PM</option>
+                      <option value="10">9:00 PM</option>
+                      <option value="11">10:00 PM</option>
+                      <option value="12">11:00 PM</option>
+                      <option value="13">Closing Time</option>
+                    </select>
+                  </div>
+                  <div class="col-5 m-0 p-0 pe-3">
+                    <select class="form-select m-0 border-1 p-3" aria-label="select">
+                      <option selected>Closing Time</option>
+                      <option value="1">1:00 AM</option>
+                      <option value="2">2:00 AM</option>
+                      <option value="3">3:00 AM</option>
+                      <option value="4">4:00 AM</option>
+                      <option value="5">5:00 AM</option>
+                      <option value="6">6:00 AM</option>
+                      <option value="8">7:00 AM</option>
+                      <option value="9">8:00 AM</option>
+                      <option value="10">9:00 AM</option>
+                      <option value="11">10:00 AM</option>
+                      <option value="12">11:00 AM</option>
+                      <option value="13">12:00 PM</option>
+                      <option value="14">1:00 PM</option>
+                      <option value="15">2:00 PM</option>
+                      <option value="3">3:00 PM</option>
+                      <option value="4">4:00 PM</option>
+                      <option value="5">5:00 PM</option>
+                      <option value="6">6:00 PM</option>
+                      <option value="8">7:00 PM</option>
+                      <option value="9">8:00 PM</option>
+                      <option value="10">9:00 PM</option>
+                      <option value="11">10:00 PM</option>
+                      <option value="12">11:00 PM</option>
+                      <option value="13">Opening Time</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row align-items-center justify-content-around pb-3 pt-3">
+                  <p class="m-0 p-0 text-secondary col-1">Thursday</p>
+                  <div class="col-5 m-0 p-0 pe-3">
+                    <select class="form-select m-0 border-1 p-3" aria-label="select">
+                      <option selected>Opening Time</option>
+                      <option value="1">1:00 AM</option>
+                      <option value="2">2:00 AM</option>
+                      <option value="3">3:00 AM</option>
+                      <option value="4">4:00 AM</option>
+                      <option value="5">5:00 AM</option>
+                      <option value="6">6:00 AM</option>
+                      <option value="8">7:00 AM</option>
+                      <option value="9">8:00 AM</option>
+                      <option value="10">9:00 AM</option>
+                      <option value="11">10:00 AM</option>
+                      <option value="12">11:00 AM</option>
+                      <option value="13">12:00 PM</option>
+                      <option value="14">1:00 PM</option>
+                      <option value="15">2:00 PM</option>
+                      <option value="3">3:00 PM</option>
+                      <option value="4">4:00 PM</option>
+                      <option value="5">5:00 PM</option>
+                      <option value="6">6:00 PM</option>
+                      <option value="8">7:00 PM</option>
+                      <option value="9">8:00 PM</option>
+                      <option value="10">9:00 PM</option>
+                      <option value="11">10:00 PM</option>
+                      <option value="12">11:00 PM</option>
+                      <option value="13">Closing Time</option>
+                    </select>
+                  </div>
+                  <div class="col-5 m-0 p-0 pe-3">
+                    <select class="form-select m-0 border-1 p-3" aria-label="select">
+                      <option selected>Closing Time</option>
+                      <option value="1">1:00 AM</option>
+                      <option value="2">2:00 AM</option>
+                      <option value="3">3:00 AM</option>
+                      <option value="4">4:00 AM</option>
+                      <option value="5">5:00 AM</option>
+                      <option value="6">6:00 AM</option>
+                      <option value="8">7:00 AM</option>
+                      <option value="9">8:00 AM</option>
+                      <option value="10">9:00 AM</option>
+                      <option value="11">10:00 AM</option>
+                      <option value="12">11:00 AM</option>
+                      <option value="13">12:00 PM</option>
+                      <option value="14">1:00 PM</option>
+                      <option value="15">2:00 PM</option>
+                      <option value="3">3:00 PM</option>
+                      <option value="4">4:00 PM</option>
+                      <option value="5">5:00 PM</option>
+                      <option value="6">6:00 PM</option>
+                      <option value="8">7:00 PM</option>
+                      <option value="9">8:00 PM</option>
+                      <option value="10">9:00 PM</option>
+                      <option value="11">10:00 PM</option>
+                      <option value="12">11:00 PM</option>
+                      <option value="13">Opening Time</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row align-items-center justify-content-around pb-3 pt-3">
+                  <p class="m-0 p-0 text-secondary col-1">Friday</p>
+                  <div class="col-5 m-0 p-0 pe-3">
+                    <select class="form-select m-0 border-1 p-3" aria-label="select">
+                      <option selected>Opening Time</option>
+                      <option value="1">1:00 AM</option>
+                      <option value="2">2:00 AM</option>
+                      <option value="3">3:00 AM</option>
+                      <option value="4">4:00 AM</option>
+                      <option value="5">5:00 AM</option>
+                      <option value="6">6:00 AM</option>
+                      <option value="8">7:00 AM</option>
+                      <option value="9">8:00 AM</option>
+                      <option value="10">9:00 AM</option>
+                      <option value="11">10:00 AM</option>
+                      <option value="12">11:00 AM</option>
+                      <option value="13">12:00 PM</option>
+                      <option value="14">1:00 PM</option>
+                      <option value="15">2:00 PM</option>
+                      <option value="3">3:00 PM</option>
+                      <option value="4">4:00 PM</option>
+                      <option value="5">5:00 PM</option>
+                      <option value="6">6:00 PM</option>
+                      <option value="8">7:00 PM</option>
+                      <option value="9">8:00 PM</option>
+                      <option value="10">9:00 PM</option>
+                      <option value="11">10:00 PM</option>
+                      <option value="12">11:00 PM</option>
+                      <option value="13">Closing Time</option>
+                    </select>
+                  </div>
+                  <div class="col-5 m-0 p-0 pe-3">
+                    <select class="form-select m-0 border-1 p-3" aria-label="select">
+                      <option selected>Closing Time</option>
+                      <option value="1">1:00 AM</option>
+                      <option value="2">2:00 AM</option>
+                      <option value="3">3:00 AM</option>
+                      <option value="4">4:00 AM</option>
+                      <option value="5">5:00 AM</option>
+                      <option value="6">6:00 AM</option>
+                      <option value="8">7:00 AM</option>
+                      <option value="9">8:00 AM</option>
+                      <option value="10">9:00 AM</option>
+                      <option value="11">10:00 AM</option>
+                      <option value="12">11:00 AM</option>
+                      <option value="13">12:00 PM</option>
+                      <option value="14">1:00 PM</option>
+                      <option value="15">2:00 PM</option>
+                      <option value="3">3:00 PM</option>
+                      <option value="4">4:00 PM</option>
+                      <option value="5">5:00 PM</option>
+                      <option value="6">6:00 PM</option>
+                      <option value="8">7:00 PM</option>
+                      <option value="9">8:00 PM</option>
+                      <option value="10">9:00 PM</option>
+                      <option value="11">10:00 PM</option>
+                      <option value="12">11:00 PM</option>
+                      <option value="13">Opening Time</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row align-items-center justify-content-around pb-3 pt-3">
+                  <p class="m-0 p-0 text-secondary col-1">Saturday</p>
+                  <div class="col-5 m-0 p-0 pe-3">
+                    <select class="form-select m-0 border-1 p-3" aria-label="select">
+                      <option selected>Opening Time</option>
+                      <option value="1">1:00 AM</option>
+                      <option value="2">2:00 AM</option>
+                      <option value="3">3:00 AM</option>
+                      <option value="4">4:00 AM</option>
+                      <option value="5">5:00 AM</option>
+                      <option value="6">6:00 AM</option>
+                      <option value="8">7:00 AM</option>
+                      <option value="9">8:00 AM</option>
+                      <option value="10">9:00 AM</option>
+                      <option value="11">10:00 AM</option>
+                      <option value="12">11:00 AM</option>
+                      <option value="13">12:00 PM</option>
+                      <option value="14">1:00 PM</option>
+                      <option value="15">2:00 PM</option>
+                      <option value="3">3:00 PM</option>
+                      <option value="4">4:00 PM</option>
+                      <option value="5">5:00 PM</option>
+                      <option value="6">6:00 PM</option>
+                      <option value="8">7:00 PM</option>
+                      <option value="9">8:00 PM</option>
+                      <option value="10">9:00 PM</option>
+                      <option value="11">10:00 PM</option>
+                      <option value="12">11:00 PM</option>
+                      <option value="13">Closing Time</option>
+                    </select>
+                  </div>
+                  <div class="col-5 m-0 p-0 pe-3">
+                    <select class="form-select m-0 border-1 p-3" aria-label="select">
+                      <option selected>Closing Time</option>
+                      <option value="1">1:00 AM</option>
+                      <option value="2">2:00 AM</option>
+                      <option value="3">3:00 AM</option>
+                      <option value="4">4:00 AM</option>
+                      <option value="5">5:00 AM</option>
+                      <option value="6">6:00 AM</option>
+                      <option value="8">7:00 AM</option>
+                      <option value="9">8:00 AM</option>
+                      <option value="10">9:00 AM</option>
+                      <option value="11">10:00 AM</option>
+                      <option value="12">11:00 AM</option>
+                      <option value="13">12:00 PM</option>
+                      <option value="14">1:00 PM</option>
+                      <option value="15">2:00 PM</option>
+                      <option value="3">3:00 PM</option>
+                      <option value="4">4:00 PM</option>
+                      <option value="5">5:00 PM</option>
+                      <option value="6">6:00 PM</option>
+                      <option value="8">7:00 PM</option>
+                      <option value="9">8:00 PM</option>
+                      <option value="10">9:00 PM</option>
+                      <option value="11">10:00 PM</option>
+                      <option value="12">11:00 PM</option>
+                      <option value="13">Opening Time</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row align-items-center justify-content-around pb-3 pt-3">
+                  <p class="m-0 p-0 text-secondary col-1">Sunday</p>
+                  <div class="col-5 m-0 p-0 pe-3">
+                    <select class="form-select m-0 border-1 p-3" aria-label="select">
+                      <option selected>Opening Time</option>
+                      <option value="1">1:00 AM</option>
+                      <option value="2">2:00 AM</option>
+                      <option value="3">3:00 AM</option>
+                      <option value="4">4:00 AM</option>
+                      <option value="5">5:00 AM</option>
+                      <option value="6">6:00 AM</option>
+                      <option value="8">7:00 AM</option>
+                      <option value="9">8:00 AM</option>
+                      <option value="10">9:00 AM</option>
+                      <option value="11">10:00 AM</option>
+                      <option value="12">11:00 AM</option>
+                      <option value="13">12:00 PM</option>
+                      <option value="14">1:00 PM</option>
+                      <option value="15">2:00 PM</option>
+                      <option value="3">3:00 PM</option>
+                      <option value="4">4:00 PM</option>
+                      <option value="5">5:00 PM</option>
+                      <option value="6">6:00 PM</option>
+                      <option value="8">7:00 PM</option>
+                      <option value="9">8:00 PM</option>
+                      <option value="10">9:00 PM</option>
+                      <option value="11">10:00 PM</option>
+                      <option value="12">11:00 PM</option>
+                      <option value="13">Closing Time</option>
+                    </select>
+                  </div>
+                  <div class="col-5 m-0 p-0 pe-3">
+                    <select class="form-select m-0 border-1 p-3" aria-label="select">
+                      <option selected>Closing Time</option>
+                      <option value="1">1:00 AM</option>
+                      <option value="2">2:00 AM</option>
+                      <option value="3">3:00 AM</option>
+                      <option value="4">4:00 AM</option>
+                      <option value="5">5:00 AM</option>
+                      <option value="6">6:00 AM</option>
+                      <option value="8">7:00 AM</option>
+                      <option value="9">8:00 AM</option>
+                      <option value="10">9:00 AM</option>
+                      <option value="11">10:00 AM</option>
+                      <option value="12">11:00 AM</option>
+                      <option value="13">12:00 PM</option>
+                      <option value="14">1:00 PM</option>
+                      <option value="15">2:00 PM</option>
+                      <option value="3">3:00 PM</option>
+                      <option value="4">4:00 PM</option>
+                      <option value="5">5:00 PM</option>
+                      <option value="6">6:00 PM</option>
+                      <option value="8">7:00 PM</option>
+                      <option value="9">8:00 PM</option>
+                      <option value="10">9:00 PM</option>
+                      <option value="11">10:00 PM</option>
+                      <option value="12">11:00 PM</option>
+                      <option value="13">Opening Time</option>
+                    </select>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <!-- ========================= Amentities Info ================================= -->
+
+            <div class="AmentiesOptions card m-0 mt-5 p-0 border-0">
+              <div
+                class="row m-0 p-3 align-items-center border border-start-0 border-bottom-1 border-top-0 border-end-0">
+                <i class="bi bi-cup-hot text-primary w-auto m-0 p-0 pe-2"></i>
+                <h4 class="fw-bold fs-6 w-auto m-0 p-0">Amenties Options</h4>
+              </div>
+              <form action="" class="m-0 p-3">
+                <div class="row m-0 p-0 mb-3">
+                  <div class="col-4 d-flex align-items-center ">
+                    <input type="checkbox">
+                    <label for="" class="text-secondary m-0 p-0 ps-2">Health Score 8.7/10</label>
+                  </div>
+                  <div class="col-4 d-flex align-items-center ">
+                    <input type="checkbox">
+                    <label for="" class="text-secondary m-0 p-0 ps-2">Reservations</label>
+                  </div>
+                  <div class="col-4 d-flex align-items-center ">
+                    <input type="checkbox">
+                    <label for="" class="text-secondary m-0 p-0 ps-2">Vegetarian Options</label>
+                  </div>
+                </div>
+                <div class="row m-0 p-0 mb-3 mt-3">
+                  <div class="col-4 d-flex align-items-center ">
+                    <input type="checkbox">
+                    <label for="" class="text-secondary m-0 p-0 ps-2">Moderate Noise</label>
+                  </div>
+                  <div class="col-4 d-flex align-items-center ">
+                    <input type="checkbox">
+                    <label for="" class="text-secondary m-0 p-0 ps-2">Good For Kids</label>
+                  </div>
+                  <div class="col-4 d-flex align-items-center ">
+                    <input type="checkbox">
+                    <label for="" class="text-secondary m-0 p-0 ps-2">Private Lot Parking</label>
+                  </div>
+                </div>
+                <div class="row m-0 p-0 mb-3 mt-3">
+                  <div class="col-4 d-flex align-items-center ">
+                    <input type="checkbox">
+                    <label for="" class="text-secondary m-0 p-0 ps-2">Beer & Wine</label>
+                  </div>
+                  <div class="col-4 d-flex align-items-center ">
+                    <input type="checkbox">
+                    <label for="" class="text-secondary m-0 p-0 ps-2">TV Services</label>
+                  </div>
+                  <div class="col-4 d-flex align-items-center ">
+                    <input type="checkbox">
+                    <label for="" class="text-secondary m-0 p-0 ps-2">Pets Allow</label>
+                  </div>
+                </div>
+                <div class="row m-0 p-0 mb-3 mt-3">
+                  <div class="col-4 d-flex align-items-center ">
+                    <input type="checkbox">
+                    <label for="" class="text-secondary m-0 p-0 ps-2">Offers Delivery</label>
+                  </div>
+                  <div class="col-4 d-flex align-items-center ">
+                    <input type="checkbox">
+                    <label for="" class="text-secondary m-0 p-0 ps-2">Staff wears masks</label>
+                  </div>
+                  <div class="col-4 d-flex align-items-center ">
+                    <input type="checkbox">
+                    <label for="" class="text-secondary m-0 p-0 ps-2">Accepts Credit Cards</label>
+                  </div>
+                </div>
+                <div class="row m-0 p-0 mb-3 mt-3">
+                  <div class="col-4 d-flex align-items-center ">
+                    <input type="checkbox">
+                    <label for="" class="text-secondary m-0 p-0 ps-2">Offers Catering</label>
+                  </div>
+                  <div class="col-4 d-flex align-items-center ">
+                    <input type="checkbox">
+                    <label for="" class="text-secondary m-0 p-0 ps-2">Good for Breakfast</label>
+                  </div>
+                  <div class="col-4 d-flex align-items-center ">
+                    <input type="checkbox">
+                    <label for="" class="text-secondary m-0 p-0 ps-2">Waiter Service</label>
+                  </div>
+                </div>
+                <div class="row m-0 p-0 mb-3 mt-3">
+                  <div class="col-4 d-flex align-items-center ">
+                    <input type="checkbox">
+                    <label for="" class="text-secondary m-0 p-0 ps-2">Drive-Thru</label>
+                  </div>
+                  <div class="col-4 d-flex align-items-center ">
+                    <input type="checkbox">
+                    <label for="" class="text-secondary m-0 p-0 ps-2">Outdoor Seating</label>
+                  </div>
+                  <div class="col-4 d-flex align-items-center ">
+                    <input type="checkbox">
+                    <label for="" class="text-secondary m-0 p-0 ps-2">Offers Takeout</label>
+                  </div>
+                </div>
+                <div class="row m-0 p-0 mb-3 mt-3">
+                  <div class="col-4 d-flex align-items-center ">
+                    <input type="checkbox">
+                    <label for="" class="text-secondary m-0 p-0 ps-2">Vegan Options</label>
+                  </div>
+                  <div class="col-4 d-flex align-items-center ">
+                    <input type="checkbox">
+                    <label for="" class="text-secondary m-0 p-0 ps-2">Casual</label>
+                  </div>
+                  <div class="col-4 d-flex align-items-center ">
+                    <input type="checkbox">
+                    <label for="" class="text-secondary m-0 p-0 ps-2">Good for Groups</label>
+                  </div>
+                </div>
+                <div class="row m-0 p-0 mb-3 mt-3">
+                  <div class="col-4 d-flex align-items-center ">
+                    <input type="checkbox">
+                    <label for="" class="text-secondary m-0 p-0 ps-2">Brunch,Lunch,Dinner</label>
+                  </div>
+                  <div class="col-4 d-flex align-items-center ">
+                    <input type="checkbox">
+                    <label for="" class="text-secondary m-0 p-0 ps-2">Free Wi-Fi</label>
+                  </div>
+                  <div class="col-4 d-flex align-items-center ">
+                    <input type="checkbox">
+                    <label for="" class="text-secondary m-0 p-0 ps-2">Wheelchair Accessible</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <!-- ========================= Social Links Info ================================= -->
+
+            <div class="SocialLinks card m-0 mt-5 p-0 border-0">
+              <div
+                class="row m-0 p-3 align-items-center border border-start-0 border-bottom-1 border-top-0 border-end-0">
+                <i class="bi bi-people-fill text-primary w-auto m-0 p-0 pe-2"></i>
+                <h4 class="fw-bold fs-6 w-auto m-0 p-0">Social Links</h4>
+              </div>
+              <form action="" class="m-0 p-3">
+                <div class="row m-0 p-0 pt-3">
+                  <div class="col-6 m-0 p-0 pe-3">
+                    <div class="row m-0 p-0 d-flex align-items-center mb-2">
+                      <i class="fa fa-facebook-f text-primary w-auto m-0 p-0 fs-5"></i>
+                      <p class="m-0 p-0 text-secondary w-auto ps-2">Facebook</p>
+                    </div>
+                    <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
+                      placeholder="https://facebook.com/">
+                  </div>
+
+                  <div class="col-6 m-0 p-0 ps-3">
+                    <div class="row m-0 p-0 d-flex align-items-center mb-2">
+                      <i class="fa fa-twitter text-primary w-auto m-0 p-0 fs-5"></i>
+                      <p class="m-0 p-0 text-secondary w-auto ps-2">Twitter</p>
+                    </div>
+                    <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
+                      placeholder="https://twitter.com/">
+                  </div>
+
+                </div>
+                <div class="row m-0 p-0 pt-3">
+                  <div class="col-6 m-0 p-0 pe-3">
+                    <div class="row m-0 p-0 d-flex align-items-center mb-2">
+                      <i class="fa fa-instagram text-primary w-auto m-0 p-0 fs-5"></i>
+                      <p class="m-0 p-0 text-secondary w-auto ps-2">Instagram</p>
+                    </div>
+                    <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
+                      placeholder="https://instagram.com/">
+                  </div>
+
+                  <div class="col-6 m-0 p-0 ps-3">
+                    <div class="row m-0 p-0 d-flex align-items-center mb-2">
+                      <i class="fa fa-linkedin text-primary w-auto m-0 p-0 fs-5"></i>
+                      <p class="m-0 p-0 text-secondary w-auto ps-2">Linkedin</p>
+                    </div>
+                    <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
+                      placeholder="https://linkedin.com/">
+                  </div>
+
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Submit & Preview</button>
+              </form>
+            </div>
+          </div>
+      </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <script src="./assests/js/userDashboard_js/script.js"></script>
+  <script src="./assests/js/userDashboard_js/profileToolpit.js"></script>
+  <script src="./assests/js/adminDashboard_js/addListing.js"></script>
 
 </body>
 
