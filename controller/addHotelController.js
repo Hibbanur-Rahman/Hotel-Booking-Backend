@@ -3,12 +3,14 @@ const Hotel = require("../models/hotelsModel");
 
 module.exports.addHotel = async (req, res) => {
   try {
-    const { hotelId, name, pin, imageHotel, description, createdAt } = req.body;
+    const {  name, categories,HotelKeyword, description, createdAt } = req.body;
 
     console.log(req.body);
-    
+    const hotelId=101;
+    const pin=847301;
+    const imageHotel='new added a hotel';
     // Validation
-    if (!hotelId || !name || !pin || !imageHotel || !description) {
+    if ( !name || !categories|| !HotelKeyword || !description) {
       return res.status(httpStatusCodes.BAD_REQUEST).json({
         success: false,
         message: "Missing required fields",
@@ -20,6 +22,8 @@ module.exports.addHotel = async (req, res) => {
     const newHotel = await Hotel.create({
       hotelId,
       name,
+      categories,
+      HotelKeyword,
       pin,
       imageHotel,
       description,

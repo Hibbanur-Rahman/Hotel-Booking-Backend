@@ -9,6 +9,14 @@ const hotelSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  categories:{
+    type: String,
+    required: true,
+  },
+  HotelKeyword:{
+    type: String,
+    required: true,
+  },
   pin:{
     type: Number,
     required: true,
