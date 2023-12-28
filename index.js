@@ -32,7 +32,6 @@ app.set("view engine", "ejs");
 app.use("/", mainRoutes);
 
 
-
 // use the add hotel routes with controller
 app.use("/addHotel",addHotelController.addHotel);
 //use the add locality routes with controller

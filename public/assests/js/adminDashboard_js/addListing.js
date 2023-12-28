@@ -18,3 +18,15 @@ profilePhotoUpload.forEach((element)=>{
         }
     })  
 })
+
+
+const menuItemsForm = document.querySelector("#menuItemsForm");
+const addMenu = document.querySelector("#addMenu");
+const manyForm=document.querySelector('.manyForm');
+const manyFormInnerData= manyForm.innerHTML;
+
+addMenu.addEventListener("click", () => {
+  var x=manyForm.innerHTML;
+  x+=manyFormInnerData;
+  manyForm.innerHTML=x;
+});

@@ -20,7 +20,7 @@ router.use((req, res, next) => {
   
   
 //user dashboard routes
-router.get("/userDashboard", (req, res) => {
+router.get("/dashboard", (req, res) => {
   res.render("./userDashboard/dashboard", { user });
 });
 //user my booking routes

@@ -253,39 +253,44 @@
               </form>
             </div>
 
-            <!-- ========================= Menue Items ================================= -->
+            <!-- ========================= Menu Items ================================= -->
             <div class="menuItems card m-0 mt-5 p-0 border-0">
-              <div
-                class="row m-0 p-3 align-items-center border border-start-0 border-bottom-1 border-top-0 border-end-0">
+              <div class="row m-0 p-3 align-items-center border border-start-0 border-bottom-1 border-top-0 border-end-0">
                 <i class="las la-utensils text-primary w-auto m-0 p-0 pe-2"></i>
                 <h4 class="fw-bold fs-6 w-auto m-0 p-0">Menu Items</h4>
               </div>
-              <form action="" class="m-0 p-3">
-                <div class="row m-0 p-0 pt-3">
-                  <div class="col-4 m-0 p-0 pe-3">
-                    <p class="m-0 p-0 pb-2 text-secondary">Item Name</p>
-                    <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
-                      placeholder="Spicy Brunchi Burger">
+              <div class="row m-0 p-0 manyForm">
+                <form action="" class="m-0 p-3" id="menuItemsForm">
+                  <div class="row m-0 p-0 pt-3">
+                    <div class="col-4 m-0 p-0 pe-3">
+                      <p class="m-0 p-0 pb-2 text-secondary">Item Name</p>
+                      <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
+                        placeholder="Spicy Brunchi Burger">
+                    </div>
+      
+                    <div class="col-4 m-0 p-0 ps-3">
+                      <p class="m-0 p-0 pb-2 text-secondary">Category</p>
+                      <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
+                        placeholder="Fast Food">
+                    </div>
+      
+                    <div class="col-4 m-0 p-0 ps-3">
+                      <p class="m-0 p-0 pb-2 text-secondary">Price</p>
+                      <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
+                        placeholder="ex. 49 USD">
+                    </div>
+      
                   </div>
-
-                  <div class="col-4 m-0 p-0 ps-3">
-                    <p class="m-0 p-0 pb-2 text-secondary">Category</p>
-                    <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
-                      placeholder="Fast Food">
-                  </div>
-
-                  <div class="col-4 m-0 p-0 ps-3">
-                    <p class="m-0 p-0 pb-2 text-secondary">Price</p>
-                    <input type="text" id="keywords" class="input-group input-group rounded-2 border border-1 p-3"
-                      placeholder="ex. 49 USD">
-                  </div>
-
-                </div>
-                <p class="text-secondary m-0 mt-3 p-0 pb-2">About Item</p>
-                <textarea name="" id="" cols="30" rows="6" class="form-control p-3"
-                  placeholder="Describe your Item"></textarea>
-                <button type="submit" class="btn btn-primary mt-3">Add New</button>
-              </form>
+                  <p class="text-secondary m-0 mt-3 p-0 pb-2">About Item</p>
+                  <textarea id="" cols="30" rows="6" class="form-control p-3" placeholder="Describe your Item"></textarea>
+                </form>
+              </div>
+             
+              <div class="row m-0 p-3 pt-0">
+                <button class="btn btn-primary mt-3 w-auto" id="addMenu">Add New</button>
+                <button type="submit" class="btn btn-primary mt-3 w-auto ms-3" id="submitMenuItems">submit & preview</button>
+              </div>
+    
             </div>
 
             <!-- ========================= Working Our ================================= -->
