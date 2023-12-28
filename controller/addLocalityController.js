@@ -50,6 +50,12 @@ module.exports.AddLocality = async (req, res) => {
             createdAt
         });
 
+        // Respond with success message and hotel information
+    res.status(httpStatusCodes.OK).json({
+        success: true,
+        message: "Hotel Added Successfully",
+        data: { localityInfo:newLocality },
+      });
 
     } catch (error) {
         console.log("something went wrong", error);
