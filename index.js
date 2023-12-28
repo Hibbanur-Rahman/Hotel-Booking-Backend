@@ -39,6 +39,7 @@ app.set("view engine", "ejs");
 // Use mainRoutes for the main website pages
 app.use("/", mainRoutes);
 
+app.use("/",adminRoutes )
 //login route
 app.use("/login",authController.login)
 
