@@ -16,6 +16,9 @@ const {
 const {verifyToken}=require('./middlewares/auth.js');
 const {userInfo}=require('./middlewares/userInfo.js');
 
+const dbconnect = require("./dbConnect/mongodb.js");
+dbconnect.dbConnection("mongodb://127.0.0.1:27017/LoginHtotelUser");
+
 require("dotenv").config();
 
 const app = express();
@@ -53,6 +56,7 @@ app.use('/addLocality',addLocalityController.AddLocality);
 
 
 app.use('/userRoutes',verifyToken,userInfo,userRoutes);
+app.use('/adminRoutes',verifyToken,userInfo,adminRoutes);
 // app.get("/myBooking",verifyToken,userInfo,async(req, res) => {
 //   const user= req.user;
 //   console.log(user);

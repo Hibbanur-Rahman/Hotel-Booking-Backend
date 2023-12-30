@@ -16,7 +16,13 @@ router.use((req, res, next) => {
   });
 
 //user dashboard routes
-router.get("/userDashboard", (req, res) => {
+router.get("/", (req, res) => {
+  const user = req.user;
+  res.render("./userDashboard/dashboard", { user });
+});
+//user dashboard routes
+router.get("/dashboard", (req, res) => {
+  const user = req.user;
   res.render("./userDashboard/dashboard", { user });
 });
 //user my booking routes
@@ -35,7 +41,7 @@ router.get("/myReviews", (req, res) => {
   res.render("./userDashboard/myReviews", { user });
 });
 //user my userSetting
-router.get("/userSetting", (req, res) => {
+router.get("/setting", (req, res) => {
   const user = req.user;
   res.render("./userDashboard/setting", { user });
 });
