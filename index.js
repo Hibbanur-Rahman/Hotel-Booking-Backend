@@ -1,20 +1,23 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
-const cookieParser = require('cookie-parser');
+const cookieParser = require("cookie-parser");
 const mainRoutes = require("./routes/mainRoutes");
 const userRoutes = require("./routes/userRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 
-const dbconnect = require('./dbConnect/mongodb.js');
-dbconnect.dbConnection('mongodb://127.0.0.1:27017/LoginHtotelUser');
+const {verifyToken}= require('./middlewares/auth.js');
+const {userInfo}=require('./middlewares/userInfo.js');
+
+const dbconnect = require("./dbConnect/mongodb.js");
+dbconnect.dbConnection("mongodb://127.0.0.1:27017/LoginHtotelUser");
 
 const {
   handleUserLogin,
   handleUserSignup,
-} = require('./controller/authController.js')
-const addHotelController=require("./controller/addHotelController.js");
-const addLocalityController= require('./controller/addLocalityController.js');
+} = require("./controller/authController.js");
+const addHotelController = require("./controller/addHotelController.js");
+const addLocalityController = require("./controller/addLocalityController.js");
 require("dotenv").config();
 
 const app = express();
@@ -30,7 +33,6 @@ app.use(cookieParser());
 // Add body-parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
 // Add body-parser middleware
 app.use(bodyParser.json());
 
@@ -41,16 +43,23 @@ app.set("view engine", "ejs");
 app.use("/", mainRoutes);
 
 //login route
-app.use("/login",handleUserLogin)
+app.use("/login", handleUserLogin);
 
 //signup route
-app.use('/signup', handleUserSignup)
+app.use("/signup", handleUserSignup);
 
 // use the add hotel routes with controller
-app.use("/addHotel",addHotelController.addHotel);
+app.use("/addHotel", addHotelController.addHotel);
 //use the add locality routes with controller
-app.use('/addLocality',addLocalityController.AddLocality);
+app.use("/addLocality", addLocalityController.AddLocality);
 
+
+app.use('/userRoutes',verifyToken,userInfo,userRoutes);
+// app.get("/myBooking",verifyToken,userInfo,async(req, res) => {
+//   const user= req.user;
+//   console.log(user);
+//   res.render("./userDashboard/myBooking", {user});
+// });
 //login logic
 // app.post("/login", async (req, res) => {
 //   try {
@@ -86,7 +95,6 @@ app.use('/addLocality',addLocalityController.AddLocality);
 //         res.render("./userDashboard/wishlist", { user });
 //       });
 
-
 //       //adminDashboard Routes
 //       app.get("/adminDashboard", (req, res) => {
 //         res.render("./adminDashboard/dashboard", { user });
@@ -120,7 +128,6 @@ app.use('/addLocality',addLocalityController.AddLocality);
 //         res.render("./adminDashboard/adminSetting", { user });
 //       });
 
-      
 //     } else {
 //       console.log("Login failed: Invalid email or password");
 //       res.render("login", { error: "Invalid email or password" });
@@ -131,7 +138,6 @@ app.use('/addLocality',addLocalityController.AddLocality);
 //     res.status(500).send("Internal Server Error");
 //   }
 // });
-
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
