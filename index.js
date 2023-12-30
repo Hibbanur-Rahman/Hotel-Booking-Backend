@@ -8,6 +8,14 @@ const adminRoutes = require("./routes/adminRoutes");
 
 const addHotelController=require("./controller/addHotelController.js");
 const addLocalityController= require('./controller/addLocalityController.js');
+
+const {
+  handleUserLogin,
+  handleUserSignup,
+}=require('./controller/authController.js');
+const {verifyToken}=require('./middlewares/auth.js');
+const {userInfo}=require('./middlewares/userInfo.js');
+
 require("dotenv").config();
 
 const app = express();
@@ -36,6 +44,8 @@ app.use("/", mainRoutes);
 //signup route
 app.use("/signup", handleUserSignup);
 
+//login  route
+app.use("/login", handleUserLogin);
 // use the add hotel routes with controller
 app.use("/addHotel", addHotelController.addHotel);
 //use the add locality routes with controller
