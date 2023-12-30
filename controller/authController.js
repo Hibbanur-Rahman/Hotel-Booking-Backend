@@ -4,7 +4,9 @@ const userCollection = require('../models/userModel')
 const { getToken } = require('../middlewares/auth')
 const bcrypt = require('bcrypt')
 
-module.exports.login = async (req, res) => {
+const saltRounds = 10; // number of salt round
+
+handleUserLogin = async (req, res) => {
   try {
     if (!req.body) {
       return json({ message: 'Enter the password and email' })
@@ -50,4 +52,34 @@ module.exports.login = async (req, res) => {
       error: error.message,
     })
   }
+}
+
+const handleUserSignup = async (req, res) => {
+    const name = req.body.name
+    const myName = name.split(' ')
+
+    const hashedPassword = await bcrypt.hash(req.body.password, saltRounds)
+
+    const userData = {
+      firstName: myName[0],
+      lastName: myName[myName.length - 1],
+      name: name,
+      email: req.body.email,
+      password: hashedPassword,
+    }
+
+    try {
+      await userCollection.create(userData)
+    } catch (error) {
+      console.error('Error inserting data:', error)
+      res.status(500).send('Internal Server Error')
+    }
+
+    return res.redirect('/login');
+}
+
+
+module.exports = {
+  handleUserLogin,
+  handleUserSignup,
 }

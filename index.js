@@ -1,9 +1,7 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
-const bcrypt = require("bcrypt");
 const cookieParser = require('cookie-parser');
-const collection = require("./models/userModel.js");
 const mainRoutes = require("./routes/mainRoutes");
 const userRoutes = require("./routes/userRoutes");
 const adminRoutes = require("./routes/adminRoutes");
@@ -11,7 +9,10 @@ const adminRoutes = require("./routes/adminRoutes");
 const dbconnect = require('./dbConnect/mongodb.js');
 dbconnect.dbConnection('mongodb://127.0.0.1:27017/LoginHtotelUser');
 
-const authController = require('./controller/authController.js')
+const {
+  handleUserLogin,
+  handleUserSignup,
+} = require('./controller/authController.js')
 const addHotelController=require("./controller/addHotelController.js");
 const addLocalityController= require('./controller/addLocalityController.js');
 require("dotenv").config();
@@ -39,9 +40,11 @@ app.set("view engine", "ejs");
 // Use mainRoutes for the main website pages
 app.use("/", mainRoutes);
 
-app.use("/",adminRoutes )
 //login route
-app.use("/login",authController.login)
+app.use("/login",handleUserLogin)
+
+//signup route
+app.use('/signup', handleUserSignup)
 
 // use the add hotel routes with controller
 app.use("/addHotel",addHotelController.addHotel);
@@ -128,30 +131,6 @@ app.use('/addLocality',addLocalityController.AddLocality);
 //     res.status(500).send("Internal Server Error");
 //   }
 // });
-
-//signup logic
-app.post("/signup", async (req, res) => {
-  const name = req.body.name;
-  const myName = name.split(" ");
-
-  const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
-
-  const userData = {
-    firstName: myName[0],
-    lastName: myName[myName.length - 1],
-    name: name,
-    email: req.body.email,
-    password: hashedPassword,
-  };
-
-  try {
-    await collection.create(userData);
-    // res.status(201).send("User created successfully");
-  } catch (error) {
-    console.error("Error inserting data:", error);
-    res.status(500).send("Internal Server Error");
-  }
-});
 
 
 const port = process.env.PORT || 5000;
