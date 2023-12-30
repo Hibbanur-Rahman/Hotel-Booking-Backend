@@ -9,6 +9,8 @@ const adminRoutes = require("./routes/adminRoutes");
 
 const addHotelController=require("./controller/addHotelController.js");
 const addLocalityController= require('./controller/addLocalityController.js');
+const addMenuItemController=require('./controller/addMenuController.js');
+
 require("dotenv").config();
 
 const app = express();
@@ -36,6 +38,8 @@ app.use("/", mainRoutes);
 app.use("/addHotel",addHotelController.addHotel);
 //use the add locality routes with controller
 app.use('/addLocality',addLocalityController.AddLocality);
+//use the add menuItem routes with controller
+app.use('/addMenu',addMenuItemController.AddMenuItem);
 
 //login logic
 app.post("/login", async (req, res) => {
