@@ -30,3 +30,29 @@ addMenu.addEventListener("click", () => {
   x+=manyFormInnerData;
   manyForm.innerHTML=x;
 });
+
+document.getElementById('submitMenuItems').addEventListener('click', () => {
+    const menuItemsFormAll = document.querySelectorAll('.menuItemsForm');
+
+    const formDataArray = [];
+
+    menuItemsFormAll.forEach((form) => {
+        const formData = new FormData(form);
+        formDataArray.push(Object.fromEntries(formData.entries()));
+    });
+
+    sendDataToServer(formDataArray);
+});
+
+function sendDataToServer(formDataArray) {
+    fetch('/addMenu', {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formDataArray),
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+}
