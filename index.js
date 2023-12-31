@@ -43,20 +43,23 @@ app.set("view engine", "ejs");
 // Use mainRoutes for the main website pages
 app.use("/", mainRoutes);
 
+//use userRoutes for the userDashboard
+app.use('/userRoutes',verifyToken,userInfo,userRoutes);
+
+//use adminRoutes for the adminDashboard
+app.use('/adminRoutes',verifyToken,userInfo,adminRoutes);
 
 //signup route
 app.use("/signup", handleUserSignup);
 
 //login  route
 app.use("/login", handleUserLogin);
+
 // use the add hotel routes with controller
 app.use("/addHotel", addHotelController.addHotel);
 //use the add locality routes with controller
 app.use('/addLocality',addLocalityController.AddLocality);
 
-
-app.use('/userRoutes',verifyToken,userInfo,userRoutes);
-app.use('/adminRoutes',verifyToken,userInfo,adminRoutes);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {

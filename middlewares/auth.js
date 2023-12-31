@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
 //const { model } = require('mongoose')
-const secretKey = 'Khan@123'
+const secretKey = 'Rahman@1234'
 
 
 async function getToken(req, res){
