@@ -8,6 +8,8 @@ const adminRoutes = require("./routes/adminRoutes");
 
 const addHotelController=require("./controller/addHotelController.js");
 const addLocalityController= require('./controller/addLocalityController.js');
+const addMenuItemsController= require('./controller/addMenuController.js');
+const AddWorkingHoursController= require('./controller/addWorkingHoursController.js');
 
 const {
   handleUserLogin,
@@ -59,7 +61,10 @@ app.use("/login", handleUserLogin);
 app.use("/addHotel", addHotelController.addHotel);
 //use the add locality routes with controller
 app.use('/addLocality',addLocalityController.AddLocality);
-
+//use the add Menu Items routes with controller
+app.use('/addMenu',addMenuItemsController.AddMenuItem);
+//use the add workingHours routes with controller
+app.use('/addWorkingHours',AddWorkingHoursController.AddWorkingHours);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {

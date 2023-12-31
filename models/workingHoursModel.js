@@ -1,6 +1,10 @@
 const mongoose= require('mongoose');
 
 const WorkingHoursSchema=mongoose.Schema({
+    HotelId:{
+        type: String,
+        required: true,
+    },
     Monday:[
         {
             opening:String,
@@ -45,7 +49,7 @@ const WorkingHoursSchema=mongoose.Schema({
     ],
     createdAt:{
         type:Date,
-        default: new Date.now,
+        default:Date.now,
     }
     
 });
