@@ -13,6 +13,10 @@ const HotelServiceSchema=new mongoose.Schema({
         type: String,
         required: true,
     },
+    menuItemsId:{
+        type: String,
+        required: true,
+    },
     description:{
         type: String,
         required: true,
