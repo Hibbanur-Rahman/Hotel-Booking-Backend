@@ -24,6 +24,7 @@ module.exports.AddWorkingHours = async (req, res) => {
     } = req.body;
 
     const HotelId=101;
+    const id=100001;
     //validation for non-empty Value
     if (
       !MondayOpening ||
@@ -50,6 +51,7 @@ module.exports.AddWorkingHours = async (req, res) => {
 
 
     const workingHours=await WorkingHoursModel.create({
+        id,
         HotelId,
         Monday:[
             {

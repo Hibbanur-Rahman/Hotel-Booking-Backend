@@ -1,6 +1,10 @@
 const mongoose= require('mongoose');
 
 const WorkingHoursSchema=mongoose.Schema({
+    id:{
+        type: String,
+        required: true,
+    },
     HotelId:{
         type: String,
         required: true,
