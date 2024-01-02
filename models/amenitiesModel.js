@@ -5,6 +5,10 @@ const AmenitiesSchema=new mongoose.Schema({
         type:String,
         required:true,
     },
+    HotelId:{
+        type: String,
+        required: true,
+    },
     info:{
         type:Array,
         required:true,
@@ -12,6 +16,10 @@ const AmenitiesSchema=new mongoose.Schema({
     displayImage:{
         type:String,
         required:true,
+    },
+    createdAt:{
+        type: Date,
+        default: Date.now,
     },
 });
 

@@ -27,10 +27,13 @@ module.exports.AddAmenities = async (req, res) => {
         GoodForGroups,
         BrunchLunchDinner,
         FreeWiFi,
-        WheelchairAccessible
+        WheelchairAccessible,
+
+        createdAt
     } = req.body;
 
-    const id=100;
+    const id=1000001;
+    const HotelId=101
     const info=[ HealthScore,
         Reservations, 
         VegetarianOptions, 
@@ -58,9 +61,10 @@ module.exports.AddAmenities = async (req, res) => {
 
     const Amenities= await AmenitiesModel.create({
         id,
+        HotelId,
         info,
-        displayImage:"impty image",
-
+        displayImage:"empty image",
+        createdAt,
     });
 
     return res.status(httpStatusCodes.OK).json({
@@ -70,7 +74,7 @@ module.exports.AddAmenities = async (req, res) => {
     });
     
   } catch (error) {
-    return res.status(httpStatusCodes.BAD_REQUEST).json({
+    return res.status(httpStatusCodes.INTERNAL_SERVER_ERROR).json({
         success:false,
         message:"someThing went wrong!!",
         error:error.message,
