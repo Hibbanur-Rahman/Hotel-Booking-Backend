@@ -10,6 +10,7 @@ const addHotelController=require("./controller/addHotelController.js");
 const addLocalityController= require('./controller/addLocalityController.js');
 const addMenuItemsController= require('./controller/addMenuController.js');
 const AddWorkingHoursController= require('./controller/addWorkingHoursController.js');
+const AddAmenitiesController= require('./controller/addAmenitiesController.js');
 
 const {
   handleUserLogin,
@@ -65,6 +66,8 @@ app.use('/addLocality',addLocalityController.AddLocality);
 app.use('/addMenu',addMenuItemsController.AddMenuItem);
 //use the add workingHours routes with controller
 app.use('/addWorkingHours',AddWorkingHoursController.AddWorkingHours);
+//use the add Amenities routes with controller
+app.use('/addAmenities',AddAmenitiesController.AddAmenities);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {

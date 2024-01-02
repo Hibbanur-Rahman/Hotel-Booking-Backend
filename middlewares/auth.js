@@ -5,7 +5,7 @@ const secretKey = 'Rahman@1234'
 
 async function getToken(req, res){
     const user = req.body;
-    const token = await jwt.sign({ user }, secretKey, { expiresIn: '500s'});
+    const token = await jwt.sign({ user }, secretKey, { expiresIn: '1h'});
     console.log(token);
     return token;
 }
