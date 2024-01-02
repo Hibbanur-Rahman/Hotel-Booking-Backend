@@ -6,7 +6,7 @@ const AmenitiesSchema=new mongoose.Schema({
         required:true,
     },
     info:{
-        type:String,
+        type:Array,
         required:true,
     },
     displayImage:{
