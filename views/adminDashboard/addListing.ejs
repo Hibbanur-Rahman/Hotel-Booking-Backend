@@ -188,19 +188,19 @@
                 <i class="bi bi-camera-fill text-primary w-auto m-0 p-0 pe-2"></i>
                 <h4 class="fw-bold fs-6 w-auto m-0 p-0">Image & Gallery Option</h4>
               </div>
-              <form action="" class="m-0 p-3">
+              <form action="/addGalleryImage" method="post" class="m-0 p-3" enctype="multipart/form-data">
                 <div class="row m-0 p-0">
                   <div class="col-4 uploadFile">
                     <p class="m-0 p-0 pb-2 text-secondary">Upload Logo</p>
                     <div
                       class="imagePreviewCard card  p-0 m-0 d-flex justify-content-center align-items-center rounded-4 d-none">
-                      <img src="../../images/adminDashboard/car-img.png" alt="" class="img-fluid rounded-4 h-100 w-auto">
+                      <img src="../../images/adminDashboard/car-img.png" alt="" class="img-fluid rounded-4 h-100 w-auto" >
                     </div>
                     <div
                       class="imgInputFeildCard card d-flex justify-content-center align-items-center border-0 rounded-4">
                       <div class="inputField uploadFile row p-0  m-0 h-100 w-100">
                         <input type="file" id="profilePhotoUpload" accept=".png,.jpg,.jpeg"
-                          class="m-0 w-100 p-0 border border-0">
+                          class="m-0 w-100 p-0 border border-0" name="images">
                       </div>
                       <img src="../../images/adminDashboard/upload-icon.png" alt="" width="50" height="50"
                         class="img-fluid m-0 p-0 position-absolute bottom-50">
@@ -219,7 +219,7 @@
                       class="imgInputFeildCard card d-flex justify-content-center align-items-center border-0 rounded-4">
                       <div class="inputField uploadFile row p-0  m-0 h-100 w-100">
                         <input type="file" id="profilePhotoUpload" accept=".png,.jpg,.jpeg"
-                          class="m-0 w-100 p-0 border border-0">
+                          class="m-0 w-100 p-0 border border-0" name="images">
                       </div>
                       <img src="../../images/adminDashboard/upload-icon.png" alt="" width="50" height="50"
                         class="img-fluid m-0 p-0 position-absolute bottom-50">
@@ -239,7 +239,7 @@
                       class="imgInputFeildCard card d-flex justify-content-center align-items-center border-0 rounded-4">
                       <div class="inputField uploadFile row p-0  m-0 h-100 w-100">
                         <input type="file" id="profilePhotoUpload" accept=".png,.jpg,.jpeg"
-                          class="m-0 w-100 p-0 border border-0">
+                          class="m-0 w-100 p-0 border border-0" name="images">
                       </div>
                       <img src="../../images/adminDashboard/upload-icon.png" alt="" width="50" height="50"
                         class="img-fluid m-0 p-0 position-absolute bottom-50">
@@ -249,6 +249,7 @@
                     <p class="m-0 p-0 pb-2 pt-2 text-secondary">Maximum file size: 2 MB.</p>
                   </div>
                 </div>
+                <button type="submit" class="btn btn-primary mt-3">Submit & Preview</button>
 
               </form>
             </div>
