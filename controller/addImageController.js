@@ -6,7 +6,6 @@ const storage= multer.memoryStorage();
 const upload= multer({
     storage: storage
 });
-
 module.exports.UploadImageGallery= async (req,res)=>{
     try{
         const uploadedImages= req.files;
