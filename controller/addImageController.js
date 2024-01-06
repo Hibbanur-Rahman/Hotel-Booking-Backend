@@ -16,16 +16,17 @@ module.exports.UploadImageGallery= async (req,res)=>{
                 message:" No images Provided",
             });
         }
-        const imageIds= await Promise.all(
-            uploadedImages.map(async (file)=>{
-                const image= new Image({
-                    data: file.buffer,
-                    contentType: file.mimetype,
-                });
-                await image.save();
-                return image._id;
-            })
-        );
+        const storage = multer.diskStorage({
+            destination: function (req, file, cb) {
+              cb(null, '/tmp/my-uploads')
+            },
+            filename: function (req, file, cb) {
+              const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+              cb(null, file.fieldname + '-' + uniqueSuffix)
+            }
+          })
+          
+          const upload = multer({ storage: storage })
         
 
         return res.status(httpStatusCode.OK).json({
