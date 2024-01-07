@@ -1,74 +1,85 @@
-const multer= require('multer');
-const Image= require('../models/ImageModel');
-const httpStatusCode=require('../constants/httpStatusCodes')
+const multer = require("multer");
+const Image = require("../models/ImageModel");
+const httpStatusCode = require("../constants/httpStatusCodes");
+const fs=require('fs');
 
-const storage= multer.memoryStorage();
-const upload= multer({
-    storage: storage
-});
-module.exports.UploadImageGallery= async (req,res)=>{
-    try{
-        const uploadedImages= req.files;
+module.exports.UploadImageGallery = async (req, res) => {
+  try {
+    const uploadedImages = req.files;
 
-        if(!uploadedImages|| uploadedImages.length==0){
-            return res.status(httpStatusCode.BAD_REQUEST).json({
-                success: false,
-                message:" No images Provided",
-            });
+    console.log(uploadedImages); // Log uploaded files
+    if (!uploadedImages || uploadedImages.length === 0) {
+      return res.status(httpStatusCode.BAD_REQUEST).json({
+        success: false,
+        message: "No images provided",
+      });
+    }
+
+    // Perform any additional logic you need for image processing
+
+    // const imageIds = uploadedImages.map((image) => {
+     
+    // });
+     // Using the same storage configuration for diskStorage
+    
+     const diskStorage = multer.diskStorage({
+        destination: function (req, file, cb) {
+         
+          var dir='./uploads';
+          if(!fs.existsSync(dir)){
+            fs.mkdirSync(dir);
+          }
+          cb(null, dir);
+        },
+        filename: function (req, file, cb) {
+          const uniqueSuffix =
+            Date.now() + "-" + Math.round(Math.random() * 1e9);
+          cb(null, file.fieldname + "-" + uniqueSuffix);
+        },
+      });
+    const upload = multer({ storage: diskStorage });
+    upload(req,res,function (err){
+        if(err){
+            return res.send("something gone wrong");
         }
-        const storage = multer.diskStorage({
-            destination: function (req, file, cb) {
-              cb(null, '/tmp/my-uploads')
-            },
-            filename: function (req, file, cb) {
-              const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-              cb(null, file.fieldname + '-' + uniqueSuffix)
-            }
-          })
-          
-          const upload = multer({ storage: storage })
-        
+        res.send("upload complete");
+    });
+    // Any additional logic related to diskStorage if needed
 
-        return res.status(httpStatusCode.OK).json({
-            success: true,
-            message: "Image Uploaded Successfully",
-            id: imageIds,
-        })
+    return res.status(httpStatusCode.OK).json({
+      success: true,
+      message: "Images uploaded successfully",
+      ids: diskStorage,
+    });
+  } catch (error) {
+    return res.status(httpStatusCode.INTERNAL_SERVER_ERROR).json({
+      success: false,
+      message: "Error uploading images",
+      error:error.message,
+    });
+  }
+};
+
+module.exports.ViewImage = async (req, res) => {
+  try {
+    const image = await Image.findById(req.params.id);
+
+    if (!image) {
+      return res.status(httpStatusCode.BAD_REQUEST).json({
+        success: false,
+        message: "Image not found",
+      });
     }
-    catch(error){
-        return res.status(httpStatusCode.INTERNAL_SERVER_ERROR)
-        .json({
-            success: false,
-            message: "Error uploading image",
-            error,
-        });
-    }
-}
 
-
-
-
-module.exports.ViewImage=async (req,res)=>{
-    try{
-        const image= await Image.findById(req.params.id);
-
-        if(!image){
-            return res.status(httpStatusCode.BAD_REQUEST).json({
-                success: false,
-                message:"Image not found",
-            });
-        }
-
-        res.writeHead(httpStatusCode.OK,{
-            'Content-Type':image.contentType
-        });
-        res.end(image.data);
-
-    }catch(error){
-        res.status(httpStatusCode.INTERNAL_SERVER_ERROR).json({
-            success:false,
-            message:"Error retrieving image",
-            error,
-        });
-    }
-}
+    res.writeHead(httpStatusCode.OK, {
+      "Content-Type": image.contentType,
+    });
+    res.end(image.data);
+  } catch (error) {
+    res.status(httpStatusCode.INTERNAL_SERVER_ERROR).json({
+      success: false,
+      message: "Error retrieving image",
+      error,
+    });
+  }
+};

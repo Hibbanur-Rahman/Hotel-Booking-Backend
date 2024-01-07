@@ -1,4 +1,4 @@
-var profilePhotoUpload=document.querySelectorAll('#profilePhotoUpload');
+var profilePhotoUpload=document.querySelectorAll('.profilePhotoUpload');
 
 profilePhotoUpload.forEach((element)=>{
     element.addEventListener('change', (event) => {

@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-const multer = require("multer"); // Import Multer
+const multer=require('multer');
 
 const mainRoutes = require("./routes/mainRoutes");
 const userRoutes = require("./routes/userRoutes");
@@ -36,11 +36,6 @@ app.use(express.static(publicPath));
 //Cookie Parser
 app.use(cookieParser());
 
-// Multer middleware
-const storage = multer.memoryStorage();
-const upload = multer({
-  storage: storage,
-});
 
 // Add body-parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -84,12 +79,11 @@ app.use("/addAmenities", AddAmenitiesController.AddAmenities);
 //use the add the SocialLink routes with controller
 app.use("/addSocialLink", AddSocialLinkController.AddSocialLink);
 
-//use the add the Image Gallery routes with the controller
-app.use(
-  "/addGalleryImage",
-  upload.array("images"),
-  AddUploadImageController.UploadImageGallery
-);
+
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
+// use the add the Image Gallery routes with the controller
+app.use("/addGalleryImage",upload.array("GalleryImage", 3),AddUploadImageController.UploadImageGallery);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {

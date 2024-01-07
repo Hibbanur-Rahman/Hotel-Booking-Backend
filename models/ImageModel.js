@@ -1,15 +1,20 @@
-const mongoose= require('mongoose');
+const mongoose = require("mongoose");
 
-
-const imageSchema=new mongoose.Schema({
-    data: Buffer,
-    contentType: String,
+const GallerySchema = new mongoose.Schema({
+  Id: {
+    type: String,
+    required: true,
+  },
+  HotelId: {
+    type: String,
+    required: true,
+  },
+  name: String,
+  description: String,
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
-const GallerySchema= new mongoose.Schema({
-    name: String,
-    description: String,
-    images: [imageSchema],
-});
-
-module.exports=mongoose.model('Image',GallerySchema);
+module.exports = mongoose.model("Image", GallerySchema);
