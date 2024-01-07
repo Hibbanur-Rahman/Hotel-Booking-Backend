@@ -38,12 +38,6 @@ module.exports.UploadImageGallery = async (req, res) => {
         },
       });
     const upload = multer({ storage: diskStorage });
-    upload(req,res,function (err){
-        if(err){
-            return res.send("something gone wrong");
-        }
-        res.send("upload complete");
-    });
     // Any additional logic related to diskStorage if needed
 
     return res.status(httpStatusCode.OK).json({
