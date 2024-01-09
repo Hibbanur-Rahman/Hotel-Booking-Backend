@@ -83,11 +83,27 @@ app.use("/addSocialLink", AddSocialLinkController.AddSocialLink);
 const storage = multer.memoryStorage();
 const upload = multer({ dest:'uploads/' });
 // use the add the Image Gallery routes with the controller
-// app.use("/addGalleryImage",upload.array("GalleryImage", 3),AddUploadImageController.UploadImageGallery);
+app.use("/addGalleryImage",upload.single("GalleryImage"),AddUploadImageController.UploadImageGallery);
 
-app.use("/addGalleryImage",upload.single("GalleryImage"),(req,res)=>{
-  res.send('upload successfully!');
-});
+// app.use("/addGalleryImage",upload.single("GalleryImage"),(req,res)=>{
+//   const diskStorage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+     
+//       var dir='./uploads/';
+//       if(!fs.existsSync(dir)){
+//         fs.mkdirSync(dir);
+//       }
+//       cb(null, dir);
+//     },
+//     filename: function (req, file, cb) {
+//       const uniqueSuffix =
+//         Date.now() + "-" + Math.round(Math.random() * 1e9);
+//       cb(null, file.fieldname + "-" + uniqueSuffix);
+//     },
+//   });
+//   const upload = multer({ storage: diskStorage });
+//   res.send('upload sucessfully!')
+// });
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {

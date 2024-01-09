@@ -19,7 +19,7 @@ module.exports.UploadImageGallery = async (req, res) => {
      const diskStorage = multer.diskStorage({
         destination: function (req, file, cb) {
          
-          var dir='../uploads';
+          var dir='../uploads/';
           if(!fs.existsSync(dir)){
             fs.mkdirSync(dir);
           }
