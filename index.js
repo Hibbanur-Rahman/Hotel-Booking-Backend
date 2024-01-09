@@ -81,9 +81,13 @@ app.use("/addSocialLink", AddSocialLinkController.AddSocialLink);
 
 
 const storage = multer.memoryStorage();
-const upload = multer({ storage: storage });
+const upload = multer({ dest:'uploads/' });
 // use the add the Image Gallery routes with the controller
-app.use("/addGalleryImage",upload.array("GalleryImage", 3),AddUploadImageController.UploadImageGallery);
+// app.use("/addGalleryImage",upload.array("GalleryImage", 3),AddUploadImageController.UploadImageGallery);
+
+app.use("/addGalleryImage",upload.single("GalleryImage"),(req,res)=>{
+  res.send('upload successfully!');
+});
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {

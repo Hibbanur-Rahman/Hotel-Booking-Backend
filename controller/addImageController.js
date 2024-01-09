@@ -14,18 +14,12 @@ module.exports.UploadImageGallery = async (req, res) => {
         message: "No images provided",
       });
     }
-
-    // Perform any additional logic you need for image processing
-
-    // const imageIds = uploadedImages.map((image) => {
-     
-    // });
      // Using the same storage configuration for diskStorage
     
      const diskStorage = multer.diskStorage({
         destination: function (req, file, cb) {
          
-          var dir='./uploads';
+          var dir='../uploads';
           if(!fs.existsSync(dir)){
             fs.mkdirSync(dir);
           }
@@ -53,6 +47,25 @@ module.exports.UploadImageGallery = async (req, res) => {
     });
   }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports.ViewImage = async (req, res) => {
   try {
