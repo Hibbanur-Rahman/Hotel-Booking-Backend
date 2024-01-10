@@ -48,7 +48,7 @@
                 <i class="bi bi-file-earmark-fill text-primary w-auto m-0 p-0 pe-2"></i>
                 <h4 class="fw-bold fs-6 w-auto m-0 p-0">Listing Info</h4>
               </div>
-              <form action="/addHotel" method="post" class="m-0 p-3">
+              <form action="/adminRoutes/Controller/addHotel" method="post" class="m-0 p-3">
                 <p class="text-secondary m-0">Listing Title</p>
                 <input type="text" id="listingTitle" class="input-group rounded-2 border border-1 p-3 mt-2"
                   placeholder="Decathlon Sport House" name="name">
@@ -91,7 +91,7 @@
                 <i class="bi bi-geo-alt-fill text-primary w-auto m-0 p-0 pe-2"></i>
                 <h4 class="fw-bold fs-6 w-auto m-0 p-0">Location Info</h4>
               </div>
-              <form action="/addLocality" method="post" class="m-0 p-3">
+              <form action="/adminRoutes/Controller/addLocality" method="post" class="m-0 p-3">
 
                 <div class="row m-0 p-0 pt-3">
                   <div class="col-6 m-0 p-0 pe-3">
@@ -188,7 +188,7 @@
                 <i class="bi bi-camera-fill text-primary w-auto m-0 p-0 pe-2"></i>
                 <h4 class="fw-bold fs-6 w-auto m-0 p-0">Image & Gallery Option</h4>
               </div>
-              <form action="/addGalleryImage" method="post" class="m-0 p-3" enctype="multipart/form-data">
+              <form action="/adminRoutes/Controller/addGalleryImage" method="post" class="m-0 p-3" enctype="multipart/form-data">
                 <div class="row m-0 p-0">
                   <div class="col-4 uploadFile">
                     <p class="m-0 p-0 pb-2 text-secondary">Upload Logo</p>
@@ -209,7 +209,8 @@
                     </div>
                     <p class="m-0 p-0 pb-2 pt-2 text-secondary">Maximum file size: 2 MB.</p>
                   </div>
-                  <!-- <div class="col-4 uploadFile">
+                  <!-- 
+                    <div class="col-4 uploadFile">
                     <p class="m-0 p-0 pb-2 text-secondary">Featured Image</p>
                     <div
                       class="imagePreviewCard card  p-0 m-0 d-flex justify-content-center align-items-center rounded-4 d-none">
@@ -247,7 +248,8 @@
                       <p class="m-0 p-0 text-secondary position-absolute pt-5">Drag files here to upload</p>
                     </div>
                     <p class="m-0 p-0 pb-2 pt-2 text-secondary">Maximum file size: 2 MB.</p>
-                  </div> -->
+                  </div> 
+                -->
                 </div>
                 <button type="submit" class="btn btn-primary mt-3">Submit & Preview</button>
 
@@ -261,7 +263,7 @@
                 <h4 class="fw-bold fs-6 w-auto m-0 p-0">Menu Items</h4>
               </div>
               <div class="row m-0 p-0 manyForm">
-                <form action="/addMenu" method="post" class="m-0 p-3 menuItemsForm" id="menuItemsForm">
+                <form action="/adminRoutes/Controller/addMenu" method="post" class="m-0 p-3 menuItemsForm" id="menuItemsForm">
                   <div class="row m-0 p-0 pt-3">
                     <div class="col-4 m-0 p-0 pe-3">
                       <p class="m-0 p-0 pb-2 text-secondary">Item Name</p>
@@ -301,7 +303,7 @@
                 <i class="bi bi-clock-fill text-primary w-auto m-0 p-0 pe-2"></i>
                 <h4 class="fw-bold fs-6 w-auto m-0 p-0">Working Hours</h4>
               </div>
-              <form action="/addWorkingHours" method="post" class="m-0 p-3">
+              <form action="/adminRoutes/Controller/addWorkingHours" method="post" class="m-0 p-3">
                 <div class="row align-items-center justify-content-around pb-3 pt-3">
                   <p class="m-0 p-0 text-secondary col-1">Monday</p>
                   <div class="col-5 m-0 p-0 pe-3">
@@ -742,7 +744,7 @@
                 <i class="bi bi-cup-hot text-primary w-auto m-0 p-0 pe-2"></i>
                 <h4 class="fw-bold fs-6 w-auto m-0 p-0">Amenties Options</h4>
               </div>
-              <form action="/addAmenities" method="post" class="m-0 p-3">
+              <form action="/adminRoutes/Controller/addAmenities" method="post" class="m-0 p-3">
                 <div class="row m-0 p-0 mb-3">
                   <div class="col-4 d-flex align-items-center ">
                     <input type="checkbox" id="HealthScore" name="HealthScore" value="Health Score 8.7/10">
@@ -867,7 +869,7 @@
                 <i class="bi bi-people-fill text-primary w-auto m-0 p-0 pe-2"></i>
                 <h4 class="fw-bold fs-6 w-auto m-0 p-0">Social Links</h4>
               </div>
-              <form action="/addSocialLink" method="post" class="m-0 p-3">
+              <form action="/adminRoutes/Controller/addSocialLink" method="post" class="m-0 p-3">
                 <div class="row m-0 p-0 pt-3">
                   <div class="col-6 m-0 p-0 pe-3">
                     <div class="row m-0 p-0 d-flex align-items-center mb-2">

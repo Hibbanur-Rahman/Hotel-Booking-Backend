@@ -45,7 +45,7 @@ document.getElementById('submitMenuItems').addEventListener('click', () => {
 });
 
 function sendDataToServer(formDataArray) {
-    fetch('/addMenu', {
+    fetch('/adminRoutes/Controller/addMenu', {
         method: 'post',
         headers: {
             'Content-Type': 'application/json',
