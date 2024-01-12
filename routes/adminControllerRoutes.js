@@ -12,11 +12,13 @@ const AddSocialLinkController = require("../controller/addSocialLinkController.j
 const AddUploadImageController = require("../controller/addImageController.js");
 
 
+const editAdminProfileController= require('../controller/editAdminProfileController.js');
+
 router.use((req,res,next)=>{
     const user=req.user;
 
     console.log(user);
-
+    
     if(user){
         next();
     }
@@ -54,5 +56,9 @@ router.use(
   AddUploadImageController.UploadImageGallery
 );
 
+
+
+//use the add the SocialLink routes with controller
+router.use("/editAdminProfile",editAdminProfileController.EditPersonalInformation);
 
 module.exports=router;
