@@ -3,12 +3,19 @@ const Hotel = require("../models/hotelsModel");
 
 module.exports.addHotel = async (req, res) => {
   try {
-    const {  name, categories,HotelKeyword, description, createdAt } = req.body;
+    const {  name, categories,HotelKeyword, description } = req.body;
 
     console.log(req.body);
+    
     const hotelId=101;
     const pin=847301;
     const imageHotel='new added a hotel';
+    const user=req.user;
+    const amenitiesId='';
+    const menuItemsId='';
+    const workingHoursId='';
+    const socialLinksId='';
+    const localityId='';
     // Validation
     if ( !name || !categories|| !HotelKeyword || !description) {
       return res.status(httpStatusCodes.BAD_REQUEST).json({
@@ -27,7 +34,7 @@ module.exports.addHotel = async (req, res) => {
       pin,
       imageHotel,
       description,
-      createdAt,
+      userId:user,
     });
 
     // Respond with success message and hotel information

@@ -3,6 +3,10 @@ const router= express.Router();
 
 const multer = require("multer");
 
+
+const { verifyToken } = require("../middlewares/auth.js");
+const { userInfo } = require("../middlewares/userInfo.js");
+
 const addHotelController = require("../controller/addHotelController.js");
 const addLocalityController = require("../controller/addLocalityController.js");
 const addMenuItemsController = require("../controller/addMenuController.js");
@@ -29,7 +33,7 @@ router.use((req,res,next)=>{
 
 
 // use the add hotel routes with controller
-router.use("/addHotel", addHotelController.addHotel);
+router.use("/addHotel", verifyToken,userInfo,addHotelController.addHotel);
 
 //use the add locality routes with controller
 router.use("/addLocality", addLocalityController.AddLocality);
