@@ -41,10 +41,14 @@ const LocalitySchema=new mongoose.Schema({
         type: String,
         required: true,
     },
-    createdAt:{
-        type: Date,
-        default: Date.now,
-    }
-});
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+    },
+    hotelId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "hotels",
+    },
+},{timestamps: true});
 
 module.exports=mongoose.model('locality',LocalitySchema);

@@ -13,9 +13,9 @@ module.exports.AddLocality = async (req, res) => {
             mobile,
             email,
             website,
-            createdAt,
         } = req.body;
 
+        const user=req.user;
         const localityId=10001;
         if (
             !lattitude ||
@@ -47,7 +47,8 @@ module.exports.AddLocality = async (req, res) => {
             mobile,
             email,
             website,
-            createdAt
+            userId: user,
+            
         });
 
         // Respond with success message and hotel information

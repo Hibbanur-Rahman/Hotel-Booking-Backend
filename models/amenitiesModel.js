@@ -17,6 +17,14 @@ const AmenitiesSchema=new mongoose.Schema({
         type:String,
         required:true,
     },
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+    },
+    hotelId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "hotels",
+    },
     createdAt:{
         type: Date,
         default: Date.now,

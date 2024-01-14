@@ -36,19 +36,19 @@ router.use((req,res,next)=>{
 router.use("/addHotel", verifyToken,userInfo,addHotelController.addHotel);
 
 //use the add locality routes with controller
-router.use("/addLocality", addLocalityController.AddLocality);
+router.use("/addLocality", verifyToken,userInfo,addLocalityController.AddLocality);
 
 //use the add Menu Items routes with controller
-router.use("/addMenu", addMenuItemsController.AddMenuItem);
+router.use("/addMenu", verifyToken,userInfo,addMenuItemsController.AddMenuItem);
 
 //use the add workingHours routes with controller
-router.use("/addWorkingHours", AddWorkingHoursController.AddWorkingHours);
+router.use("/addWorkingHours",verifyToken,userInfo, AddWorkingHoursController.AddWorkingHours);
 
 //use the add Amenities routes with controller
-router.use("/addAmenities", AddAmenitiesController.AddAmenities);
+router.use("/addAmenities", verifyToken,userInfo,AddAmenitiesController.AddAmenities);
 
 //use the add the SocialLink routes with controller
-router.use("/addSocialLink", AddSocialLinkController.AddSocialLink);
+router.use("/addSocialLink",verifyToken,userInfo, AddSocialLinkController.AddSocialLink);
 
 const storage = multer.memoryStorage();
 const upload = multer({ dest: "uploads/" });
