@@ -36,7 +36,7 @@ router.use((req,res,next)=>{
 router.use("/addHotel", verifyToken,userInfo,addHotelController.addHotel);
 
 //use the add locality routes with controller
-router.use("/addLocality", verifyToken,userInfo,addLocalityController.AddLocality);
+router.use("/addLocality", verifyToken , userInfo,addLocalityController.AddLocality);
 
 //use the add Menu Items routes with controller
 router.use("/addMenu", verifyToken,userInfo,addMenuItemsController.AddMenuItem);
