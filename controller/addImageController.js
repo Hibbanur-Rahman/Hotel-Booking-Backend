@@ -18,29 +18,17 @@ module.exports.UploadImageGallery = async (req, res) => {
       });
     }
 
-    // Using the same storage configuration for diskStorage
-
-    const diskStorage = multer.diskStorage({
-      destination: function (req, file, cb) {
-        var dir = "../uploads/";
-        if (!fs.existsSync(dir)) {
-          fs.mkdirSync(dir);
-        }
-        cb(null, dir);
-      },
-      filename: function (req, file, cb) {
-        const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-        cb(null, file.fieldname + "-" + uniqueSuffix);
-      },
+    const ImageUpload= Image.create({
+      Id:'10001',
+      HotelId:'100',
+      name:uploadedImages[0].originalname,
+      description:'hello',
     });
-
-    const upload = multer({ storage: diskStorage });
-    // Any additional logic related to diskStorage if needed
 
     return res.status(httpStatusCode.OK).json({
       success: true,
       message: "Images uploaded successfully",
-      ids: diskStorage,
+      ImageUpload:ImageUpload
     });
   } catch (error) {
     return res.status(httpStatusCode.INTERNAL_SERVER_ERROR).json({
